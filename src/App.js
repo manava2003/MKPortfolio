@@ -81,7 +81,7 @@ function App() {
 
         {/* Images Component */}
         <div className="">
-          <Images />
+          <Images/>
         </div>
       </main>
 

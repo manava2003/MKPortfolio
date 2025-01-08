@@ -288,7 +288,7 @@ function App() {
               ></img>
             </div>
             <div>
-              <img src=""></img>
+              <img alt="empty" src=""></img>
             </div>
           </div>
         </div>

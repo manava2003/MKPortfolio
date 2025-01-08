@@ -9,8 +9,8 @@ export const Images = () => {
       <img
         alt="image3"
         src={image3}
-        className="w-[564px] h-[606px] absolute transform transition-all duration-500 
-          group-hover:translate-x-[-350px] group-hover:rotate-[-15deg] group-hover:scale-95"
+        className="w-[564px] h-[606px] absolute transform transition-all duration-500 origin-bottom
+          group-hover:translate-x-[-350px] group-hover:rotate-[-10deg] group-hover:scale-95"
       />
 
       {/* Center Image */}
@@ -25,8 +25,8 @@ export const Images = () => {
       <img
         alt="image2"
         src={image2}
-        className="w-[464px] h-[606px] absolute transform transition-all duration-500
-          group-hover:translate-x-[350px] group-hover:rotate-[15deg] group-hover:scale-95"
+        className="w-[464px] h-[606px] absolute transform transition-all duration-500 origin-bottom
+          group-hover:translate-x-[350px] group-hover:rotate-[10deg] group-hover:scale-95"
       />
     </div>
   );

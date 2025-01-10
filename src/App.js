@@ -1,5 +1,4 @@
 import "./App.css";
-import logo from "./assets/MKAEBAE.png";
 
 import { Images } from "./components/Images";
 import { About } from "./sections/About";
@@ -7,10 +6,13 @@ import { Services } from "./sections/Services";
 import CustomCursor from "./components/CustomCursor";
 import { useRef } from "react";
 import Illustrations from "./sections/Illustrations";
-import pinkSection from "./assets/Rectangle 6.png";
+
 import firstImage from "./assets/image 17.png";
 import secondImage from "./assets/image 19.png";
 import thirdImage from "./assets/WhatsApp Video 2024-12-20 at 01.20.02_758dcb7f 1.png";
+import PinkSectionCarousel from "./sections/PinkSectionCarousel";
+import BigThreeImagesBandW from "./sections/BigThreeImagesBandW";
+import BigFourImages from "./sections/BigFourImages";
 
 function App() {
   const aboutRef = useRef(null);
@@ -201,15 +203,15 @@ function App() {
       <br></br>
       <div ref={servicesRef}>
         <Services></Services>
-        <div></div>
+
         <div>
           <Illustrations></Illustrations>
         </div>
       </div>
-      <div className="relative mt-14">
+      <div className="relative  bg-[#E90074] min-h-screen min-w-screen rounded-t-[350px] ">
         {/* Image */}
 
-        <img src={pinkSection} alt="Background" className="w-full h-auto" />
+        {/* <img src={pinkSection} alt="Background" className="w-full h-auto" /> */}
         {/* Text Overlay */}
         <div className="absolute inset-0">
           <div className=" relative top-[450px] left-56">
@@ -270,7 +272,7 @@ function App() {
                 />
               </svg>
             </div>
-            <div className="flex justify-evenly -translate-x-[15rem] mt-20 gap-5">
+            <div className="bg-[#E90074] flex justify-evenly -translate-x-[15rem] mt-20 gap-5">
               <img
                 src={firstImage}
                 className="h-[427px] w-[329px] self-center transform transition-all duration-[300ms] hover:scale-110"
@@ -287,8 +289,15 @@ function App() {
                 alt="3"
               ></img>
             </div>
-            <div>
-              <img alt="empty" src=""></img>
+            {/* put this scetion in middle */}
+            <div className=" flex justify-center -translate-x-[15rem] mt-30  mb-30 p-24  bg-[#E90074]">
+              <PinkSectionCarousel />
+            </div>
+            <div className="-translate-x-[15rem] bg-green ">
+              <BigThreeImagesBandW />
+            </div>
+            <div className="-translate-x-[15rem]">
+              <BigFourImages />
             </div>
           </div>
         </div>

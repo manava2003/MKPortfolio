@@ -13,6 +13,7 @@ import thirdImage from "./assets/WhatsApp Video 2024-12-20 at 01.20.02_758dcb7f 
 import PinkSectionCarousel from "./sections/PinkSectionCarousel";
 import BigThreeImagesBandW from "./sections/BigThreeImagesBandW";
 import BigFourImages from "./sections/BigFourImages";
+import SketchSlider from "./sections/SketchSlider";
 
 function App() {
   const aboutRef = useRef(null);
@@ -293,11 +294,14 @@ function App() {
             <div className=" flex justify-center -translate-x-[15rem] mt-30  mb-30 p-24  bg-[#E90074]">
               <PinkSectionCarousel />
             </div>
-            <div className="-translate-x-[15rem] bg-green ">
+            <div className="-translate-x-[15rem]  ">
               <BigThreeImagesBandW />
             </div>
-            <div className="-translate-x-[15rem]">
+            <div className="-translate-x-[15rem] mt-40">
               <BigFourImages />
+            </div>
+            <div className="-translate-x-[15rem] mt-40">
+              <SketchSlider />
             </div>
           </div>
         </div>

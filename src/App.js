@@ -6,6 +6,7 @@ import { Services } from "./sections/Services";
 import CustomCursor from "./components/CustomCursor";
 import { useRef } from "react";
 import Illustrations from "./sections/Illustrations";
+import { motion } from "framer-motion";
 
 import firstImage from "./assets/image 17.png";
 import secondImage from "./assets/image 19.png";
@@ -90,7 +91,13 @@ function App() {
       {/* Main Section */}
       <main className="">
         {/* Logo Section */}
-        <div className="flex justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 100, rotateX: 30 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center"
+        >
           <svg
             width="627"
             height="339"
@@ -127,7 +134,7 @@ function App() {
               fill="#E90074"
             />
           </svg>
-        </div>
+        </motion.div>
 
         {/* Images Component */}
         <div className="">
@@ -165,7 +172,13 @@ function App() {
       </div>
 
       {/* Decorative SVG */}
-      <div className=" flex justify-center py-6 top-[700px] mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 100, rotateX: 30 }}
+        whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+        viewport={{ once: true, margin: "-200px" }}
+        transition={{ duration: 1.0 }}
+        className=" flex justify-center py-6 top-[700px] mx-auto"
+      >
         <svg
           width="47"
           height="277"
@@ -180,12 +193,25 @@ function App() {
             strokeLinecap="round"
           />
         </svg>
-      </div>
-      <div className=" text-center font-[Poppins] " ref={aboutRef}>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 100, rotateX: 30 }}
+        whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+        viewport={{ once: true, margin: "-200px" }}
+        transition={{ duration: 1.0 }}
+        className=" text-center font-[Poppins] "
+        ref={aboutRef}
+      >
         <About></About>
-      </div>
+      </motion.div>
       <br></br>
-      <div className=" flex justify-center py-6 top-[700px] mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 100, rotateX: 30 }}
+        whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+        viewport={{ once: true, margin: "-200px" }}
+        transition={{ duration: 1.0 }}
+        className=" flex justify-center py-6 top-[700px] mx-auto"
+      >
         <svg
           width="101"
           height="292"
@@ -200,16 +226,34 @@ function App() {
             stroke-linecap="round"
           />
         </svg>
-      </div>
+      </motion.div>
       <br></br>
-      <div ref={servicesRef}>
+      <motion.div
+        initial={{ opacity: 0, y: 100, rotateX: 30 }}
+        whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+        viewport={{ once: true, margin: "-200px" }}
+        transition={{ duration: 1.0 }}
+        ref={servicesRef}
+      >
         <Services></Services>
 
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 100, rotateX: 30 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          viewport={{ once: true, margin: "-200px" }}
+          transition={{ duration: 1.0 }}
+          className=""
+        >
           <Illustrations></Illustrations>
-        </div>
-      </div>
-      <div className="relative  bg-[#E90074] min-h-screen min-w-screen rounded-t-[350px] ">
+        </motion.div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 100, rotateX: 30 }}
+        whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+        viewport={{ once: true, margin: "-200px" }}
+        transition={{ duration: 1.0 }}
+        className="relative  bg-[#E90074] min-h-screen min-w-screen rounded-t-[350px] "
+      >
         {/* Image */}
 
         {/* <img src={pinkSection} alt="Background" className="w-full h-auto" /> */}
@@ -305,7 +349,7 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

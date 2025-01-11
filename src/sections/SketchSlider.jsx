@@ -3,6 +3,7 @@ import sliderImage1 from "../assets/slider-image1.jpeg";
 import sliderImage2 from "../assets/slider-image2.jpeg";
 import sliderImage3 from "../assets/slider-image3.jpeg";
 import sliderImage4 from "../assets/slider-image4.jpeg";
+import { motion } from "framer-motion";
 
 const CarouselBackground = () => {
   const [position, setPosition] = useState(0);
@@ -59,7 +60,7 @@ const ContactForm = () => {
           )}
 
           <div className="flex gap-2 justify-center mt-4">
-            {[0, 1, 2].map((index) => ( 
+            {[0, 1, 2].map((index) => (
               <button
                 key={index}
                 onClick={() => setStep(index)}
@@ -77,10 +78,16 @@ const ContactForm = () => {
 
 const SketchSlider = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden pt-32">
+    <motion.div
+      initial={{ opacity: 0, y: 100, rotateX: 30 }}
+      whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8 }}
+      className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden pt-32"
+    >
       <CarouselBackground />
       <ContactForm />
-    </div>
+    </motion.div>
   );
 };
 

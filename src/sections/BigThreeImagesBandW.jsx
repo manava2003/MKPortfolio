@@ -2,6 +2,7 @@ import React from "react";
 import performance1 from "../assets/performance1.png";
 import performance2 from "../assets/performance2.png";
 import performance3 from "../assets/performance3.png";
+import { motion } from "framer-motion";
 
 const BigThreeImagesBandW = () => {
   const images = [
@@ -23,7 +24,13 @@ const BigThreeImagesBandW = () => {
   ];
 
   return (
-    <div className="w-full grid grid-cols-3 gap-1">
+    <motion.div
+      initial={{ opacity: 0, y: 100, rotateX: 30 }}
+      whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8 }}
+      className="w-full grid grid-cols-3 gap-1"
+    >
       {images.map((image) => (
         <div key={image.id} className="relative h-[600px] overflow-hidden">
           {/* Pink colored section (now 60% of height) */}
@@ -59,7 +66,7 @@ const BigThreeImagesBandW = () => {
           />
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 export default BigThreeImagesBandW;

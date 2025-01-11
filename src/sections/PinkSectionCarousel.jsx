@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination"; // No need for navigation CSS anymore
 import pinkStatue from "../assets/pink-statue.png";
+import { motion } from "framer-motion";
 
 import { Pagination, Autoplay } from "swiper/modules";
 
@@ -19,7 +20,11 @@ const PinkSectionCarousel = () => {
   ];
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 100, rotateX: 30 }}
+      whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8 }}
       className="bg-[#BE0561] rounded-t-lg flex items-center justify-center"
       style={{
         width: "100%",
@@ -74,7 +79,7 @@ const PinkSectionCarousel = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </motion.div>
   );
 };
 

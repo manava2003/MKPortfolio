@@ -15,19 +15,16 @@ const CustomCursor = () => {
 
     const handleMouseEnter = () => setIsVisible(true);
     const handleMouseLeave = () => setIsVisible(false);
-
     const handleResize = () => {
       setScreenSize({
         width: window.innerWidth,
         height: window.innerHeight,
       });
     };
-
     document.addEventListener("mousemove", updatePosition);
     document.addEventListener("mouseenter", handleMouseEnter);
     document.addEventListener("mouseleave", handleMouseLeave);
     window.addEventListener("resize", handleResize);
-
     document.body.style.cursor = "none";
 
     return () => {
@@ -40,7 +37,6 @@ const CustomCursor = () => {
   }, []);
 
   const spotlightRadius = Math.min(screenSize.width, screenSize.height) * 0.66;
-
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999]">
       {/* Soft background light effect */}
@@ -59,7 +55,6 @@ const CustomCursor = () => {
           transition: "background 150ms ease-out",
         }}
       />
-
       {/* Outer white circle */}
       <div
         className={`absolute h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full 
@@ -71,7 +66,6 @@ const CustomCursor = () => {
           transform: `translate(-50%, -50%)`,
         }}
       />
-
       {/* Inner cursor dot */}
       <div
         className={`absolute h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full 

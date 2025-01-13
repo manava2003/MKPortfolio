@@ -28,7 +28,7 @@ function App() {
   };
 
   return (
-    <div className=" bg-black min-h-screen w-full bg-custom-image  bg-center bg-100% overflow-x-hidden">
+    <div className=" bg-black  min-h-screen w-full bg-custom-image  bg-center bg-100% overflow-x-hidden">
       <CustomCursor></CustomCursor>
       {/* Header */}
       <header className="flex justify-between items-center py-6 px-6">
@@ -317,7 +317,7 @@ function App() {
                 />
               </svg>
             </div>
-            <div className="bg-[#E90074] flex justify-evenly -translate-x-[15rem] mt-20 gap-5">
+            <div className="bg-[#E90074] flex justify-evenly -translate-x-[14rem] mt-20 gap-5">
               <img
                 src={firstImage}
                 className="h-[427px] w-[329px] self-center transform transition-all duration-[300ms] hover:scale-110"
@@ -335,16 +335,16 @@ function App() {
               ></img>
             </div>
             {/* put this scetion in middle */}
-            <div className=" flex justify-center -translate-x-[15rem] mt-30  mb-30 p-24  bg-[#E90074]">
+            <div className=" flex justify-center -translate-x-[14rem] mt-30  mb-30 p-24  bg-[#E90074]">
               <PinkSectionCarousel />
             </div>
-            <div className="-translate-x-[15rem]  ">
+            <div className="-translate-x-[14rem]  ">
               <BigThreeImagesBandW />
             </div>
-            <div className="-translate-x-[15rem] mt-40">
+            <div className="-translate-x-[14rem] mt-40">
               <BigFourImages />
             </div>
-            <div className="-translate-x-[15rem] mt-40">
+            <div className="-translate-x-[14rem] mt-40">
               <SketchSlider />
             </div>
           </div>

@@ -17,24 +17,24 @@ export const Images = () => {
       <img
         alt="image3"
         src={image3}
-        className="w-[564px] h-[606px] absolute transform transition-all duration-500 origin-bottom
-              group-hover:translate-x-[-350px] group-hover:rotate-[-10deg] group-hover:scale-95"
+        className="w-[564px] h-[650px] absolute transform transition-all duration-500 origin-bottom
+              group-hover:translate-x-[-295px] group-hover:translate-y-[-10px] group-hover:rotate-[3deg]"
       />
 
       {/* Center Image */}
       <img
         alt="image1"
         src={image1}
-        className="w-[534px] h-[606px] absolute transform transition-all duration-500 z-10
-              group-hover:translate-y-[-10px] group-hover:scale-100"
+        className="w-[500px] h-[606px] absolute transform transition-all duration-500 z-10
+ group-hover:scale-100"
       />
 
       {/* Right Image */}
       <img
         alt="image2"
         src={image2}
-        className="w-[464px] h-[606px] absolute transform transition-all duration-500 origin-bottom
-              group-hover:translate-x-[350px] group-hover:rotate-[10deg] group-hover:scale-95"
+        className="w-[564px] h-[650px] absolute transform transition-all duration-500 origin-bottom
+              group-hover:translate-x-[250px]  group-hover:rotate-[5deg] group-hover:-tranlate-y-[-10px]"
       />
     </motion.div>
   );

@@ -10,11 +10,11 @@ import { motion } from "framer-motion";
 
 import firstImage from "./assets/image 17.png";
 import secondImage from "./assets/image 19.png";
-import thirdImage from "./assets/WhatsApp Video 2024-12-20 at 01.20.02_758dcb7f 1.png";
 import PinkSectionCarousel from "./sections/PinkSectionCarousel";
 import BigThreeImagesBandW from "./sections/BigThreeImagesBandW";
 import BigFourImages from "./sections/BigFourImages";
 import SketchSlider from "./sections/SketchSlider";
+import backgroundVideo from "./assets/video.mp4";
 
 function App() {
   const aboutRef = useRef(null);
@@ -258,98 +258,56 @@ function App() {
 
         {/* <img src={pinkSection} alt="Background" className="w-full h-auto" /> */}
         {/* Text Overlay */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 ">
+          {/* <div className="">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+            >
+              <source src={backgroundVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div> */}
           <div className=" relative top-[450px] left-56">
-            <div className=" flex gap-5 items-center">
-              <svg
+            <div>
+              <div className=" flex gap-5 items-center">
+                {/* <svg
                 width="30"
                 height="30"
                 viewBox="0 0 30 30"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-              >
+                >
                 <rect width="30" height="30" fill="white" />
-              </svg>
+                </svg> */}
+                <div className="bg-white w-[20px] h-[20px]"></div>
+                <h1 className="text-7xl text-left tracking-tighter font-extrabold subpixel-antialiased leading-none text-white">
+                  MILEY COLLECTION
+                </h1>
+              </div>
 
-              <svg
-                width="459"
-                height="159"
-                viewBox="0 0 459 159"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className=""
-              >
-                <path
-                  d="M427.732 109.194C427.732 101.602 428.32 95.3495 429.496 90.4369C430.672 85.3754 431.73 81.2071 432.671 77.932L433.906 73.9126C434.729 71.3819 435.493 68.4045 436.199 64.9806C437.022 61.4077 437.434 57.6116 437.434 53.5922V27.2427C437.434 25.4563 437.022 24.5631 436.199 24.5631C435.258 24.5631 434.788 25.4563 434.788 27.2427V61.6311H413.62V27.9126C413.62 19.2783 415.678 12.5048 419.794 7.59223C424.028 2.53074 429.496 0 436.199 0C442.902 0 448.311 2.53074 452.427 7.59223C456.543 12.5048 458.601 19.2783 458.601 27.9126V53.5922C458.601 61.7799 457.954 68.4789 456.661 73.6893C455.485 78.8996 454.427 83.1424 453.486 86.4174L452.075 90.4369C451.369 92.9676 450.663 95.7216 449.958 98.699C449.252 101.676 448.9 105.1 448.9 108.971V120.806H427.732V109.194ZM427.732 126.388H448.9V157.65H427.732V126.388Z"
-                  fill="white"
-                />
-                <path
-                  d="M365.194 27.9126C365.194 19.2783 367.311 12.5048 371.544 7.59223C375.778 2.53074 381.246 0 387.949 0C394.652 0 400.003 2.45631 404.001 7.36893C408.117 12.2815 410.175 19.1294 410.175 27.9126V131.078C410.175 139.712 408.117 146.56 404.001 151.621C399.885 156.534 394.476 158.99 387.773 158.99C381.07 158.99 375.602 156.534 371.368 151.621C367.252 146.56 365.194 139.712 365.194 131.078V27.9126ZM387.773 134.427C388.596 134.427 389.008 133.534 389.008 131.748V27.2427C389.008 25.4563 388.596 24.5631 387.773 24.5631C386.832 24.5631 386.362 25.4563 386.362 27.2427V131.748C386.362 133.534 386.832 134.427 387.773 134.427Z"
-                  fill="#B8045D"
-                />
-                <path
-                  d="M362.631 157.649H341.464V92.4456H338.818V157.649H317.65V1.33887H338.818V66.766H341.464V1.33887H362.631V157.649Z"
-                  fill="#B8045D"
-                />
-                <path
-                  d="M309.715 157.649H278.846L276.729 50.6884L276.553 26.1253H276.023L275.671 50.6884L273.554 157.649H242.685L235.276 1.33887H259.266V129.737H259.795L260.324 102.717L263.323 1.33887H289.077L292.252 102.717L292.781 129.737H293.31V1.33887H316.242L309.715 157.649Z"
-                  fill="#B8045D"
-                />
-                <path
-                  d="M206.302 115.222V157.649H185.134V115.222L171.023 1.33887H193.072L194.836 50.6884L195.365 73.0184H195.894L196.424 50.6884L198.364 1.33887H220.237L206.302 115.222Z"
-                  fill="white"
-                />
-                <path
-                  d="M136.948 1.33887H169.581V25.902H158.115V65.2029H168.699V89.766H158.115V133.086H170.463V157.649H136.948V1.33887Z"
-                  fill="white"
-                />
-                <path
-                  d="M123.491 1.33887V133.086H134.957V157.649H102.323V1.33887H123.491Z"
-                  fill="white"
-                />
-                <path
-                  d="M99.7187 157.649H78.5512V1.33887H99.7187V157.649Z"
-                  fill="white"
-                />
-                <path
-                  d="M75.8502 157.649H55.741L56.7994 60.5136L56.623 33.7175H56.0938L55.0355 60.5136L49.92 157.649H26.1066L20.9911 60.5136L19.7563 33.7175H19.2271L19.0507 60.5136L20.1091 157.649H0V1.33887H35.2791L37.2195 87.0864L37.9251 111.873H38.4543L40.571 1.33887H75.8502V157.649Z"
-                  fill="white"
-                />
-              </svg>
-            </div>
-            <div className="bg-[#E90074] flex justify-evenly -translate-x-[14rem] mt-20 gap-5">
-              <img
-                src={firstImage}
-                className="h-[427px] w-[329px] self-center transform transition-all duration-[300ms] hover:scale-110"
-                alt="1"
-              ></img>
-              <img
-                src={thirdImage}
-                className="h-[788px] w-[446px] self-center transform transition-all duration-[300ms] hover:scale-110"
-                alt="2"
-              ></img>
-              <img
-                src={secondImage}
-                className="h-[427px] w-[337px] self-center transform transition-all duration-[300ms] hover:scale-110"
-                alt="3"
-              ></img>
-            </div>
-            {/* put this scetion in middle */}
-            <div className=" flex justify-center -translate-x-[14rem] mt-30  mb-30 p-24  bg-[#E90074]">
-              <PinkSectionCarousel />
+              {/* put this scetion in middle */}
+              <div className=" flex justify-center -translate-x-[14rem] mt-30  mb-30 p-24  bg-[#E90074]">
+                <PinkSectionCarousel />
+              </div>
             </div>
             <div className="-translate-x-[14rem]  ">
               <BigThreeImagesBandW />
             </div>
-            <div className="-translate-x-[14rem] mt-40">
-              <BigFourImages />
-            </div>
-            <div className="-translate-x-[14rem] mt-40">
-              <SketchSlider />
-            </div>
           </div>
         </div>
       </motion.div>
+      <div>
+        <div className="translate-y-[70rem] mt-40">
+          <BigFourImages />
+        </div>
+        <div className="translate-y-[70rem] mt-40">
+          <SketchSlider />
+        </div>
+      </div>
     </div>
   );
 }

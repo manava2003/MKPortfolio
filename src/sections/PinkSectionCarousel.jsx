@@ -3,6 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination"; // No need for navigation CSS anymore
 import pinkStatue from "../assets/pink-statue.png";
+import girlWithNewspaper from "../assets/girlWithNewspaper.png";
+
 import { motion } from "framer-motion";
 
 import { Pagination, Autoplay } from "swiper/modules";
@@ -11,11 +13,13 @@ const PinkSectionCarousel = () => {
   const slides = [
     {
       image: pinkStatue,
-      text: `It is an avant-garde leather garment collection inspired by Miley Cyrus, celebrating her fearless approach to fashion and individuality. It pays homage to rock ‘n’ roll culture, and embraces an eclectic fusion of styles. It’s a unique and immersive fashion experience that invites individuals to break free from the ordinary and celebrate their inner wilderness. It represents not only the sunny side of self-expression, but also the darker, more introspective aspects of human existence. Each garment is a reflection of of her life’s highs and lows, translating her personal triumphs and traumas into intricate designs that tell a profound story.`,
+      para1: `It is an avant-garde leather garment collection inspired by Miley Cyrus, celebrating her fearless approach to fashion and individuality. It pays homage to rock ‘n’ roll culture, and embraces an eclectic fusion of styles. It’s a unique and immersive fashion experience that invites individuals to break free from the ordinary and celebrate their inner wilderness. `,
+      para2: `It represents not only the sunny side of self-expression, but also the darker, more introspective aspects of human existence. Each garment is a reflection of of her life’s highs and lows, translating her personal triumphs and traumas into intricate designs that tell a profound story.`,
     },
     {
-      image: pinkStatue,
-      text: `It is an avant-garde leather garment collection inspired by Miley Cyrus, celebrating her fearless approach to fashion and individuality. It pays homage to rock ‘n’ roll culture, and embraces an eclectic fusion of styles. It’s a unique and immersive fashion experience that invites individuals to break free from the ordinary and celebrate their inner wilderness. It represents not only the sunny side of self-expression, but also the darker, more introspective aspects of human existence. Each garment is a reflection of of her life’s highs and lows, translating her personal triumphs and traumas into intricate designs that tell a profound story.`,
+      image: girlWithNewspaper,
+      para1: `It is an avant-garde leather garment collection inspired by Miley Cyrus, celebrating her fearless approach to fashion and individuality. It pays homage to rock ‘n’ roll culture, and embraces an eclectic fusion of styles. It’s a unique and immersive fashion experience that invites individuals to break free from the ordinary and celebrate their inner wilderness. `,
+      para2: `It represents not only the sunny side of self-expression, but also the darker, more introspective aspects of human existence. Each garment is a reflection of of her life’s highs and lows, translating her personal triumphs and traumas into intricate designs that tell a profound story.`,
     },
   ];
 
@@ -47,12 +51,12 @@ const PinkSectionCarousel = () => {
         {slides.map((slide, index) => (
           <SwiperSlide
             key={index}
-            className="flex justify-start gap-10 items-center p-5"
+            className="grid grid-cols-2 gap-10 items-center p-5"
           >
             <figure
               className=""
               style={{
-                width: "307px",
+                width: "500px",
                 height: "489px",
                 borderRadius: "4px 0 0 0",
               }}
@@ -60,13 +64,13 @@ const PinkSectionCarousel = () => {
               <img
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-scale-down"
               />
             </figure>
             <div
-              className="text-white"
+              className="text-white -translate-x-24 -translate-y-10"
               style={{
-                width: "721px",
+                width: "600px",
                 fontFamily: "Poppins",
                 fontSize: "18px",
                 fontWeight: "400",
@@ -74,7 +78,10 @@ const PinkSectionCarousel = () => {
                 textAlign: "justify",
               }}
             >
-              {slide.text}
+              <div className="flex flex-col gap-2">
+                <span className="">{slide.para1}</span>
+                <span>{slide.para2}</span>
+              </div>
             </div>
           </SwiperSlide>
         ))}

@@ -29,7 +29,7 @@ const PinkSectionCarousel = () => {
       whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8 }}
-      className="bg-[#BE0561] rounded-t-lg flex items-center justify-center"
+      className=" rounded-t-lg flex items-center justify-center"
       style={{
         width: "100%",
         maxWidth: "1154px",
@@ -68,10 +68,10 @@ const PinkSectionCarousel = () => {
               />
             </figure>
             <div
-              className="text-white -translate-x-24 -translate-y-10"
+              className="text-white -translate-x-20 -translate-y-10"
               style={{
                 width: "600px",
-                fontFamily: "Poppins",
+                fontFamily: "Poppins",  
                 fontSize: "18px",
                 fontWeight: "400",
                 lineHeight: "27px",

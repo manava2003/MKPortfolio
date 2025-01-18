@@ -80,7 +80,7 @@ const ContactForm = () => {
 
 const SketchSlider = () => {
   return (
-    <motion.div
+    <div
       initial={{ opacity: 0, y: 100, rotateX: 30 }}
       whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -89,7 +89,7 @@ const SketchSlider = () => {
     >
       <CarouselBackground />
       <ContactForm />
-    </motion.div>
+    </div>
   );
 };
 

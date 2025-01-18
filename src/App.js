@@ -143,7 +143,7 @@ function App() {
       </main>
 
       {/* Navbar */}
-      <div className="left-[477px] top-[550px] fixed z-10">
+      <div className="left-[477px] top-[550px] fixed z-10 overflow-scroll">
         <div className=" bg-[#2424248C] gap-[40px] rounded-[10px] font-[Poppins] p-5 backdrop-blur-md fixed  w-[477px] h-[40px] z-30 flex text-white justify-between items-center">
           {/* item1 */}
           <button className="flex items-center justify-center">
@@ -247,64 +247,66 @@ function App() {
           <Illustrations></Illustrations>
         </motion.div>
       </motion.div>
+
+      {/* pink section */}
       <motion.div
         initial={{ opacity: 0, y: 100, rotateX: 30 }}
         whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
         viewport={{ once: true, margin: "-200px" }}
         transition={{ duration: 1.0 }}
-        className="relative  bg-[#E90074] min-h-screen min-w-screen rounded-t-[350px] "
+        className="relative bg-pink-500 min-h-screen w-full rounded-t-[350px] overflow-hidden"
       >
-        {/* Image */}
+        {/* Background Video */}
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-40"
+          >
+            <source src={backgroundVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
-        {/* <img src={pinkSection} alt="Background" className="w-full h-auto" /> */}
-        {/* Text Overlay */}
-        <div className="absolute inset-0 ">
-          {/* <div className="">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute top-0 left-0 w-full h-full object-cover -z-10"
-            >
-              <source src={backgroundVideo} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div> */}
-          <div className=" relative top-[450px] left-56">
-            <div>
-              <div className=" flex gap-5 items-center">
-                {/* <svg
-                width="30"
-                height="30"
-                viewBox="0 0 30 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                >
-                <rect width="30" height="30" fill="white" />
-                </svg> */}
-                <div className="bg-white w-[20px] h-[20px]"></div>
-                <h1 className="text-7xl text-left tracking-tighter font-extrabold subpixel-antialiased leading-none text-white">
-                  MILEY COLLECTION
-                </h1>
-              </div>
-
-              {/* put this scetion in middle */}
-              <div className=" flex justify-center -translate-x-[14rem] mt-30  mb-30 p-24  bg-[#E90074]">
-                <PinkSectionCarousel />
-              </div>
+        {/* Content Overlay */}
+        <div className="relative z-10 container mx-auto px-4 py-24">
+          <div className="mt-32">
+            {/* Title Section */}
+            <div className="flex items-center gap-5 mb-12">
+              <div className="bg-white w-5 h-5"></div>
+              <h1 className="text-5xl md:text-8xl  tracking-tighter font-extrabold subpixel-antialiased leading-none text-white">
+                MILEY COLLECTION
+              </h1>
             </div>
-            <div className="-translate-x-[14rem]  ">
+            <div className="flex items-center gap-5 m-44">
+              <p className="text-xs translate-x-[550px] md:text-4xl text-left tracking-none font-thin subpixel-antialiased leading-none text-white [word-spacing:10px]">
+                From her days as a Disney
+                <br /> superstar to the fearless rebel <br />
+                breaking societal norms, this
+                <br /> collection captures the nostalgic <br />
+                echoes of her evolution
+              </p>
+            </div>
+
+            {/* Carousel Section */}
+            <div className="w-full bg-pink-700 p-8 md:p-12 lg:p-24">
+              <PinkSectionCarousel />
+            </div>
+
+            {/* Images Section */}
+            <div className="w-screen -mx-[50vw] left-[50%] relative mt-72 translate-y-24">
               <BigThreeImagesBandW />
             </div>
           </div>
         </div>
       </motion.div>
       <div>
-        <div className="translate-y-[70rem] mt-40">
+        <div className=" mt-40">
           <BigFourImages />
         </div>
-        <div className="translate-y-[70rem] mt-40">
+        <div className=" mt-40">
           <SketchSlider />
         </div>
       </div>

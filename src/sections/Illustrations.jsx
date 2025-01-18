@@ -11,23 +11,23 @@ const Illustrations = () => {
   const imageVariants = {
     center: {
       hidden: { opacity: 0, scale: 0.5, y: 100 },
-      visible: { opacity: 1, scale: 1, y: 0 },
+      visible: { opacity: 1, scale: 1, y: -80 },
     },
     left1: {
       hidden: { opacity: 0, scale: 0.5, x: -150, y: 100 },
-      visible: { opacity: 1, scale: 1, x: -300, y: 0 },
+      visible: { opacity: 1, scale: 1, x: -300, y: -80 },
     },
     right1: {
       hidden: { opacity: 0, scale: 0.5, x: 150, y: 100 },
-      visible: { opacity: 1, scale: 1, x: 300, y: 0 },
+      visible: { opacity: 1, scale: 1, x: 300, y: -80 },
     },
     left2: {
       hidden: { opacity: 0, scale: 0.5, x: -300, y: 100 },
-      visible: { opacity: 1, scale: 1, x: -600, y: 0 },
+      visible: { opacity: 1, scale: 1, x: -600, y: -80 },
     },
     right2: {
       hidden: { opacity: 0, scale: 0.5, x: 300, y: 100 },
-      visible: { opacity: 1, scale: 1, x: 600, y: 0 },
+      visible: { opacity: 1, scale: 1, x: 600, y: -80 },
     },
   };
 
@@ -70,7 +70,7 @@ const Illustrations = () => {
         {/* Right First */}
         <motion.img
           src={i4}
-          className="absolute w-[280px] object-contain"
+          className="absolute w-[280px] object-contain "
           variants={imageVariants.right1}
           initial="hidden"
           whileInView="visible"
@@ -104,7 +104,7 @@ const Illustrations = () => {
         />
       </div>
 
-      <button className="mb-36 w-[1155px] flex items-center justify-center text-center rounded-md border-2 border-white text-white hover:bg-[#E90074] text-[16px] h-[57px] group overflow-hidden relative">
+      <button className="mb-36 cursor-none w-[1155px] flex items-center justify-center text-center rounded-md border-2 border-white text-white hover:bg-[#E90074] text-[16px] h-[57px] group overflow-hidden relative">
         View All
       </button>
     </div>

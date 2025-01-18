@@ -11,23 +11,82 @@ const Illustrations = () => {
   const imageVariants = {
     center: {
       hidden: { opacity: 0, scale: 0.5, y: 100 },
-      visible: { opacity: 1, scale: 1, y: -80 },
+      visible: {
+        opacity: 1,
+        scale: 1,
+        y: -80,
+        transition: {
+          type: "spring",
+          stiffness: 100,
+          damping: 15,
+          duration: 1,
+          delay: 0,
+        },
+      },
     },
     left1: {
       hidden: { opacity: 0, scale: 0.5, x: -150, y: 100 },
-      visible: { opacity: 1, scale: 1, x: -300, y: -80 },
+      visible: {
+        opacity: 1,
+        scale: 1,
+        x: -300,
+        y: -80,
+        transition: {
+          type: "spring",
+          stiffness: 100,
+          damping: 15,
+          duration: 1,
+          delay: 0.3,
+        },
+      },
     },
     right1: {
       hidden: { opacity: 0, scale: 0.5, x: 150, y: 100 },
-      visible: { opacity: 1, scale: 1, x: 300, y: -80 },
+      visible: {
+        opacity: 1,
+        scale: 1,
+        x: 300,
+        y: -80,
+        transition: {
+          type: "spring",
+          stiffness: 100,
+          damping: 15,
+          duration: 1,
+          delay: 0.3,
+        },
+      },
     },
     left2: {
       hidden: { opacity: 0, scale: 0.5, x: -300, y: 100 },
-      visible: { opacity: 1, scale: 1, x: -600, y: -80 },
+      visible: {
+        opacity: 1,
+        scale: 1,
+        x: -600,
+        y: -80,
+        transition: {
+          type: "spring",
+          stiffness: 100,
+          damping: 15,
+          duration: 1,
+          delay: 0.6,
+        },
+      },
     },
     right2: {
       hidden: { opacity: 0, scale: 0.5, x: 300, y: 100 },
-      visible: { opacity: 1, scale: 1, x: 600, y: -80 },
+      visible: {
+        opacity: 1,
+        scale: 1,
+        x: 600,
+        y: -80,
+        transition: {
+          type: "spring",
+          stiffness: 100,
+          damping: 15,
+          duration: 1,
+          delay: 0.6,
+        },
+      },
     },
   };
 
@@ -50,9 +109,11 @@ const Illustrations = () => {
           variants={imageVariants.center}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.8 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0 }}
-          whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+          viewport={{
+            once: false,
+            amount: 0.2,
+            margin: "0px 0px -200px 0px",
+          }}
         />
 
         {/* Left First */}
@@ -62,21 +123,25 @@ const Illustrations = () => {
           variants={imageVariants.left1}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.6 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+          viewport={{
+            once: false,
+            amount: 0.2,
+            margin: "0px 0px -200px 0px",
+          }}
         />
 
         {/* Right First */}
         <motion.img
           src={i4}
-          className="absolute w-[280px] object-contain "
+          className="absolute w-[280px] object-contain"
           variants={imageVariants.right1}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.4 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-          whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+          viewport={{
+            once: false,
+            amount: 0.2,
+            margin: "0px 0px -200px 0px",
+          }}
         />
 
         {/* Left Second */}
@@ -86,9 +151,11 @@ const Illustrations = () => {
           variants={imageVariants.left2}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
-          whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+          viewport={{
+            once: false,
+            amount: 0.2,
+            margin: "0px 0px -200px 0px",
+          }}
         />
 
         {/* Right Second */}
@@ -98,13 +165,15 @@ const Illustrations = () => {
           variants={imageVariants.right2}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
-          whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+          viewport={{
+            once: false,
+            amount: 0.2,
+            margin: "0px 0px -200px 0px",
+          }}
         />
       </div>
 
-      <button className="mb-36 cursor-none w-[1155px] flex items-center justify-center text-center rounded-md border-2 border-white text-white hover:bg-[#E90074] text-[16px] h-[57px] group overflow-hidden relative">
+      <button className="mb-36 cursor-none w-[1155px] flex items-center justify-center text-center rounded-md border-2 border-white text-white transition-colors duration-300 hover:bg-[#E90074] text-[16px] h-[57px]">
         View All
       </button>
     </div>

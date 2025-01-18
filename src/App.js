@@ -8,8 +8,6 @@ import { useRef } from "react";
 import Illustrations from "./sections/Illustrations";
 import { motion } from "framer-motion";
 
-import firstImage from "./assets/image 17.png";
-import secondImage from "./assets/image 19.png";
 import PinkSectionCarousel from "./sections/PinkSectionCarousel";
 import BigThreeImagesBandW from "./sections/BigThreeImagesBandW";
 import BigFourImages from "./sections/BigFourImages";
@@ -254,7 +252,7 @@ function App() {
         whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
         viewport={{ once: true, margin: "-200px" }}
         transition={{ duration: 1.0 }}
-        className="relative bg-pink-500 min-h-screen w-full rounded-t-[350px] overflow-hidden"
+        className="relative bg-pink-500 min-h-[120vh] w-full rounded-t-[350px] overflow-hidden mt-96"
       >
         {/* Background Video */}
         <div className="absolute inset-0">

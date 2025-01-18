@@ -64,14 +64,14 @@ const PinkSectionCarousel = () => {
               <img
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-full object-scale-down"
+                className="w-full h-full object-scale-down -translate-x-20 "
               />
             </figure>
             <div
               className="text-white -translate-x-20 -translate-y-10"
               style={{
                 width: "600px",
-                fontFamily: "Poppins",  
+                fontFamily: "Poppins",
                 fontSize: "18px",
                 fontWeight: "400",
                 lineHeight: "27px",

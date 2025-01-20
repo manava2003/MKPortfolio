@@ -29,7 +29,7 @@ const BigThreeImagesBandW = () => {
       whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8 }}
-      className="w-full grid grid-cols-3 gap-1"
+      className="w-full grid grid-cols-3"
     >
       {images.map((image) => (
         <div key={image.id} className="relative h-[600px] overflow-hidden">

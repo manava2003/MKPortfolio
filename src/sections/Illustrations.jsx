@@ -133,7 +133,7 @@ const Illustrations = () => {
         {/* Right First */}
         <motion.img
           src={i4}
-          className="absolute w-[280px] object-contain"
+          className="absolute w-[280px] object-scale-down "
           variants={imageVariants.right1}
           initial="hidden"
           whileInView="visible"
@@ -173,7 +173,7 @@ const Illustrations = () => {
         />
       </div>
 
-      <button className="mb-36 cursor-none w-[1155px] flex items-center justify-center text-center rounded-md border-2 border-white text-white transition-colors duration-300 hover:bg-[#E90074] text-[16px] h-[57px]">
+      <button className="invisible mb-36 cursor-none w-[1155px] flex items-center justify-center text-center rounded-md border-2 border-white text-white transition-colors duration-300 hover:bg-[#E90074] text-[16px] h-[57px]">
         View All
       </button>
     </div>

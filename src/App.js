@@ -160,7 +160,7 @@ function App() {
               />
             </svg>
 
-            <span>Menu</span>
+            <span className="ml-5">Menu</span>
           </button>
           <button onClick={() => scrollToSection(aboutRef)}>About</button>
           <button onClick={() => scrollToSection(servicesRef)}>Services</button>
@@ -252,7 +252,7 @@ function App() {
         whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
         viewport={{ once: true, margin: "-200px" }}
         transition={{ duration: 1.0 }}
-        className="relative bg-pink-500 min-h-[120vh] w-full rounded-t-[350px] overflow-hidden mt-96"
+        className="relative bg-pink-500 min-h-[120vh] w-full rounded-t-[350px] overflow-hidden mt-70"
       >
         {/* Background Video */}
         <div className="absolute inset-0">
@@ -272,9 +272,9 @@ function App() {
         <div className="relative z-10 container mx-auto px-4 py-24">
           <div className="mt-32">
             {/* Title Section */}
-            <div className="flex items-center gap-5 mb-12">
+            <div className="flex items-center translate-x-10 gap-5 mb-12">
               <div className="bg-white w-5 h-5"></div>
-              <h1 className="text-5xl md:text-8xl  tracking-tighter font-extrabold subpixel-antialiased leading-none text-white">
+              <h1 className="text-5xl   md:text-8xl  tracking-tighter font-extrabold subpixel-antialiased leading-none text-white">
                 MILEY COLLECTION
               </h1>
             </div>
@@ -289,7 +289,7 @@ function App() {
             </div>
 
             {/* Carousel Section */}
-            <div className="w-full bg-pink-700 p-8 md:p-12 lg:p-24">
+            <div className="w-full  bg-pink-700 p-8 md:p-12 lg:p-24">
               <PinkSectionCarousel />
             </div>
 

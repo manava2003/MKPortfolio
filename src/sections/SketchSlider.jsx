@@ -21,12 +21,14 @@ const CarouselBackground = () => {
   return (
     <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
       <div
-        className="flex gap-8 absolute transition-transform duration-500"
+        className="flex gap-4 md:gap-8 absolute transition-transform duration-500"
         style={{ transform: `translateX(${position}px)` }}
       >
-        {/* Duplicate images for infinite effect */}
         {[...images, ...images, ...images].map((src, index) => (
-          <div key={index} className="w-[400px] h-[400px] flex-shrink-0">
+          <div
+            key={index}
+            className="w-[200px] md:w-[400px] h-[200px] md:h-[400px] flex-shrink-0"
+          >
             <img
               src={src}
               alt={`Carousel item ${index}`}
@@ -43,12 +45,12 @@ const ContactForm = () => {
   const [step, setStep] = useState(0);
 
   return (
-    <div className="relative min-h-screen translate-y-20  z-10  max-w-6xl mx-auto px-6">
-      <div className="bg-black/50 backdrop-blur-md rounded-xl p-[200px] text-white">
-        <h1 className="-translate-y-10 text-5xl text-center font-extrabold leading-loose mt-20 mb-2 tracking-tighter">
+    <div className="relative min-h-screen translate-y-10 md:translate-y-20 z-10 max-w-6xl mx-auto px-4 md:px-6">
+      <div className="bg-black/50 backdrop-blur-md rounded-xl p-6 md:p-[200px] text-white">
+        <h1 className="-translate-y-4 md:-translate-y-10 text-3xl md:text-5xl text-center font-extrabold leading-loose mt-10 md:mt-20 mb-2 tracking-tighter">
           WANNA <span className="text-pink-500">CREATE</span> SOMETHING?
         </h1>
-        <p className="text-center -translate-y-16 text-lg mb-8">
+        <p className="text-center -translate-y-8 md:-translate-y-16 text-base md:text-lg mt-10 mb-8">
           Let's connect
         </p>
 
@@ -57,7 +59,7 @@ const ContactForm = () => {
             <input
               type="text"
               placeholder="Your name"
-              className="w-full placeholder:text-center  bg-gray-800/50 backdrop-blur rounded-lg px-4 -translate-y-6 py-10 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500"
+              className="w-full placeholder:text-center bg-gray-800/50 backdrop-blur rounded-lg px-4 -translate-y-2 md:-translate-y-6 py-6 md:py-10 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500"
             />
           )}
 
@@ -80,16 +82,16 @@ const ContactForm = () => {
 
 const SketchSlider = () => {
   return (
-    <div
+    <motion.div
       initial={{ opacity: 0, y: 100, rotateX: 30 }}
       whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8 }}
-      className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden pt-32"
+      className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden pt-16 md:pt-32"
     >
       <CarouselBackground />
       <ContactForm />
-    </div>
+    </motion.div>
   );
 };
 

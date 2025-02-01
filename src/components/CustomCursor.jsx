@@ -34,7 +34,7 @@ const CustomCursor = () => {
       window.removeEventListener("resize", handleResize);
       document.body.style.cursor = "auto";
     };
-  }, []);
+  });   
 
   const spotlightRadius = Math.min(screenSize.width, screenSize.height) * 0.66;
   return (

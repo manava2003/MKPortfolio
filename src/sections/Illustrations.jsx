@@ -29,7 +29,7 @@ const Illustrations = () => {
       visible: {
         opacity: 1,
         scale: 1,
-        x: -300,
+        x: -250 ,
         y: -80,
         transition: {
           type: "spring",
@@ -45,7 +45,7 @@ const Illustrations = () => {
       visible: {
         opacity: 1,
         scale: 1,
-        x: 300,
+        x: 250,
         y: -80,
         transition: {
           type: "spring",
@@ -61,7 +61,7 @@ const Illustrations = () => {
       visible: {
         opacity: 1,
         scale: 1,
-        x: -600,
+        x: -450,
         y: -80,
         transition: {
           type: "spring",
@@ -77,7 +77,7 @@ const Illustrations = () => {
       visible: {
         opacity: 1,
         scale: 1,
-        x: 600,
+        x: 450,
         y: -80,
         transition: {
           type: "spring",

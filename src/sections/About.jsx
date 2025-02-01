@@ -1,5 +1,6 @@
 import React from "react";
 import mk from "../assets/image 7.png";
+import ParaPhoto from "../assets/As a person I look for deeper meaning in all the things that exist or happen. I want to keep evolving and discovering the infinite potential within me . My life's purpose is to create extraordinary things which exceed my imagination. My love for cr.png";
 
 export const About = () => {
   return (
@@ -101,16 +102,7 @@ export const About = () => {
               </svg>
             </div>
 
-            <p className="text-[18px] mt-5 font-thin font-[Poppins] text-justify">
-              As a person I look for deeper meaning in all the things that exist
-              or happen. I want to keep evolving and discovering the infinite
-              potential within me . My life's purpose is to create extraordinary
-              things which exceed my imagination. My love for creating “ the
-              extraordinary ” stems from my deep appreciation for artistic
-              expression.
-              <br /> Art is my muse, and through fashion, I strive to make it
-              wearable and accessible to all.
-            </p>
+            <img className="pt-10" src={ParaPhoto} alt="paraphoto" />
           </div>
         </div>
       </div>

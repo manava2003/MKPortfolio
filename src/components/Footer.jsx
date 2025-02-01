@@ -18,7 +18,7 @@ export default function Component() {
         </div>
 
         {/* Footer Navigation Groups */}
-        <div className="flex gap-16">
+        <div className="flex gap-32 -translate-x-10">
           {/* Explore Links */}
           <div className="text-white">
             <h2 className="text-xl font-extralight text-black mb-6">Explore</h2>
@@ -83,6 +83,7 @@ export default function Component() {
           </div>
         </div>
       </div>
+      <div className="bg-pink-800 h-[30px] translate-y-10"></div>
     </footer>
   );
 }

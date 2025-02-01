@@ -1,6 +1,6 @@
 import React from "react";
 import mk from "../assets/image 7.png";
-import ParaPhoto from "../assets/As a person I look for deeper meaning in all the things that exist or happen. I want to keep evolving and discovering the infinite potential within me . My life's purpose is to create extraordinary things which exceed my imagination. My love for cr.png";
+import ParaPhoto from "../assets/Asaimage.png";
 
 export const About = () => {
   return (

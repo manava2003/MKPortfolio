@@ -110,7 +110,7 @@ function App() {
       </main>
 
       {/* Navbar */}
-      <div className="left-[477px] top-[550px] fixed z-10 overflow-scroll">
+      <div className="left-[477px] top-[550px] fixed z-50 overflow-scroll">
         <div className=" bg-[#2424248C] gap-[40px] rounded-[10px] font-[Poppins] p-5 backdrop-blur-md fixed  w-[477px] h-[40px] z-30 flex text-white justify-between items-center">
           {/* item1 */}
           <button className="flex items-center justify-center">

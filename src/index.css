@@ -6,13 +6,13 @@ html,
 body {
   @apply min-h-screen;
   background-color: black;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 body {
   background: black;
   color: white;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 img {

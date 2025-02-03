@@ -6,7 +6,7 @@ html,
 body {
   @apply min-h-screen;
   background-color: black;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
 }
 

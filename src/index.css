@@ -11,6 +11,8 @@ body {
 body {
   background: black;
   color: white;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 img {

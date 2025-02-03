@@ -30,7 +30,7 @@ function App() {
   };
 
   return (
-    <div className=" bg-black  min-h-screen w-full bg-custom-image  bg-center bg-100% overflow-x-hidden">
+    <div className=" bg-black  min-h-screen w-full bg-custom-image overflow-y-clip  bg-center bg-100% overflow-x-hidden">
       <CustomCursor></CustomCursor>
       {/* Header */}
       <header className="flex justify-between items-center py-6 px-6">
@@ -110,7 +110,7 @@ function App() {
       </main>
 
       {/* Navbar */}
-      <div className="left-[477px] top-[550px] fixed z-50 overflow-scroll">
+      <div className="left-[477px] top-[550px] fixed z-50 ">
         <div className=" bg-[#2424248C] gap-[40px] rounded-[10px] font-[Poppins] p-5 backdrop-blur-md fixed  w-[477px] h-[40px] z-30 flex text-white justify-between items-center">
           {/* item1 */}
           <button className="flex items-center justify-center">

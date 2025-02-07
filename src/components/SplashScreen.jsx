@@ -1,7 +1,6 @@
-"use client";
-
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import BigLogo from "../assets/Group 14.png";
 
 export default function SplashScreen() {
   const [showSplash, setShowSplash] = useState(true);
@@ -9,8 +8,7 @@ export default function SplashScreen() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 2500); // Adjust this value to control how long the splash screen shows
-
+    }, 2500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -21,7 +19,6 @@ export default function SplashScreen() {
       transition: {
         duration: 0.5,
         when: "beforeChildren",
-        staggerChildren: 0.3,
       },
     },
     exit: {
@@ -30,11 +27,10 @@ export default function SplashScreen() {
     },
   };
 
-  const textVariants = {
-    hidden: { scale: 0, y: 50, opacity: 0 },
+  const imageVariants = {
+    hidden: { scale: 0, opacity: 0 },
     visible: {
-      scale: 1,
-      y: 0,
+      scale: 2,
       opacity: 1,
       transition: {
         duration: 1,
@@ -43,7 +39,6 @@ export default function SplashScreen() {
     },
     exit: {
       scale: 0,
-      y: -50,
       opacity: 0,
       filter: "blur(10px)",
       transition: {
@@ -57,7 +52,7 @@ export default function SplashScreen() {
     <AnimatePresence>
       {showSplash && (
         <motion.div
-          className="fixed inset-0 flex items-center justify-center  z-50 overflow-hidden"
+          className="fixed inset-0 flex items-center justify-center z-50 overflow-hidden"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -69,21 +64,16 @@ export default function SplashScreen() {
         >
           <div className="absolute left-0 top-0 bottom-0 w-1/4 bg-pink-100 blur-3xl opacity-50" />
           <div className="absolute right-0 top-0 bottom-0 w-1/4 bg-pink-100 blur-3xl opacity-50" />
-          <div className="text-gray-800 text-center px-4 relative z-10">
-            <motion.h1
-              className="text-4xl md:text-6xl font-bold mb-4"
-              variants={textVariants}
-            >
-              Fashion Redefined
-            </motion.h1>
-            <motion.p
-              className="text-xl md:text-2xl max-w-2xl mx-auto"
-              variants={textVariants}
-            >
-              Transcending conventional fashion norms into a form of art that
-              people can wear with pride
-            </motion.p>
-          </div>
+          <motion.div
+            className="relative z-10 flex items-center justify-center"
+            variants={imageVariants}
+          >
+            <img
+              src={BigLogo}
+              alt="Splash screen logo"
+              className="w-[300px] h-[300px] object-contain"
+            />
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

@@ -18,6 +18,7 @@ import SmallLogo from "./assets/Group 15.png";
 import Footer from "./components/Footer";
 import MileyCollection from "./assets/MILEY COLLECTION.png";
 import SplashScreen from "./components/SplashScreen";
+import SlideArrowButton from "./components/Button";
 
 function App() {
   const aboutRef = useRef(null);
@@ -38,23 +39,7 @@ function App() {
       {/* Header */}
       <header className="flex justify-between items-center py-6 px-6">
         <img src={SmallLogo} alt="small logo" />
-        <button className="flex items-center justify-center text-center rounded-md border-2 border-white text-white hover:bg-[#E90074] text-[16px] w-[160px] h-[57px] group overflow-hidden relative">
-          <span className="absolute inset-0 bg-[#E90074] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-          <span className="relative z-10">Let's Talk!</span>
-          <svg
-            className="ml-2 relative z-10"
-            width="14"
-            height="9"
-            viewBox="0 0 14 9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M9.20623 8.61111L9.58755 9L14 4.5L9.58755 0L9.20623 0.388889L12.965 4.22222H0V4.77778H12.965L9.20623 8.61111Z"
-              fill="white"
-            />
-          </svg>
-        </button>
+        <SlideArrowButton />
       </header>
 
       {/* Main Section */}

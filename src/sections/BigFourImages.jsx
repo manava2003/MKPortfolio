@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import manicJacket from "../assets/MANIAC BIKER JACKET.png";
 import metaverseCostume from "../assets/METAVERSE COSTUME.png";
 import priscousImage from "../assets/PRECOCIOUS ORANGE.png";
+import blackJacketGirl from "../assets/frame1.jpeg";
 
 const BigFourImages = () => {
   const images = [
@@ -27,6 +28,12 @@ const BigFourImages = () => {
       titleImg: priscousImage,
       subtitle: " Leather Design",
       alt: "Street Fashion Image",
+    },
+    {
+      src: blackJacketGirl,
+      titleImg: priscousImage,
+      subtitle: "Leather Design",
+      alt: "Street Fashion Design",
     },
   ];
 

@@ -40,9 +40,73 @@ const CarouselBackground = () => {
     </div>
   );
 };
-
 const ContactForm = () => {
   const [step, setStep] = useState(0);
+  const [details, setDetails] = useState({
+    name: "",
+    message: "",
+    email: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false); // New state for success message
+
+  const handleChange = (e) => {
+    setDetails((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleNext = () => {
+    if (step === 0 && details.name.trim()) {
+      setStep(1);
+    } else if (step === 1 && details.message.trim()) {
+      setStep(2);
+    }
+  };
+
+  const handleKeyInput = (e, field) => {
+    if (e.key === "Enter" || e.type === "input") {
+      let timeout = setTimeout(() => {
+        if (details[field].trim()) {
+          handleNext();
+        }
+      }, 2000);
+
+      return () => clearTimeout(timeout);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!details.email.trim()) return;
+
+    setLoading(true);
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/rs1768867@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(details),
+        }
+      );
+
+      if (response.ok) {
+        setDetails({ name: "", message: "", email: "" });
+        setStep(0);
+        setSubmitted(true); // Show success message
+
+        // Hide message after 3 seconds
+        setTimeout(() => setSubmitted(false), 3000);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+    setLoading(false);
+  };
 
   return (
     <div className="relative min-h-screen translate-y-10 md:translate-y-20 z-10 max-w-6xl mx-auto px-4 md:px-6">
@@ -54,27 +118,71 @@ const ContactForm = () => {
           Let's connect
         </p>
 
-        <div className="space-y-6">
-          {step === 0 && (
-            <input
-              type="text"
-              placeholder="Your name"
-              className="w-full placeholder:text-center bg-gray-800/50 backdrop-blur rounded-lg px-4 -translate-y-2 md:-translate-y-6 py-6 md:py-10 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500"
-            />
-          )}
+        <form onSubmit={handleSubmit}>
+          <div className="space-y-6">
+            {step === 0 && (
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  name="name"
+                  value={details.name}
+                  onChange={handleChange}
+                  onKeyDown={(e) => handleKeyInput(e, "name")}
+                  onInput={(e) => handleKeyInput(e, "name")}
+                  placeholder="Your name"
+                  className="w-full placeholder:text-center bg-gray-800/50 backdrop-blur rounded-lg px-4 py-6 md:py-10 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500"
+                />
+              </div>
+            )}
+            {step === 1 && (
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  name="message"
+                  value={details.message}
+                  onChange={handleChange}
+                  onKeyDown={(e) => handleKeyInput(e, "message")}
+                  onInput={(e) => handleKeyInput(e, "message")}
+                  placeholder="Your message"
+                  className="w-full placeholder:text-center bg-gray-800/50 backdrop-blur rounded-lg px-4 py-6 md:py-10 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500"
+                />
+              </div>
+            )}
+            {step === 2 && (
+              <div className="space-y-4 relative">
+                <input
+                  type="email"
+                  name="email"
+                  value={details.email}
+                  onChange={handleChange}
+                  placeholder="Your Email"
+                  className="w-full placeholder:text-center bg-gray-800/50 backdrop-blur rounded-lg px-4 py-6 md:py-10 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500"
+                />
+                <button type="submit" onClick={handleSubmit} className="hidden">
+                  Next
+                </button>
 
-          <div className="flex gap-2 justify-center mt-4">
-            {[0, 1, 2].map((index) => (
-              <button
-                key={index}
-                onClick={() => setStep(index)}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  step === index ? "bg-pink-500" : "bg-gray-600"
-                }`}
-              />
-            ))}
+                {/* Success message with check mark */}
+                {submitted && (
+                  <div className="absolute bottom-2 right-4 flex items-center text-green-500 text-sm">
+                    ✅ Form submitted
+                  </div>
+                )}
+              </div>
+            )}
+
+            <div className="flex gap-2 justify-center mt-4">
+              {[0, 1, 2].map((index) => (
+                <div
+                  key={index}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    step === index ? "bg-pink-500" : "bg-gray-600"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

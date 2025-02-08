@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className=" bg-black  min-h-screen w-full bg-custom-image overflow-y-clip  bg-center bg-100% overflow-x-hidden">
-      <SplashScreen />
+      {/* <SplashScreen /> */}
 
       <CustomCursor></CustomCursor>
       {/* Header */}

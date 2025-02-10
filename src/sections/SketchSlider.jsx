@@ -1,22 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import sliderImage1 from "../assets/slider-image1.png";
 import sliderImage2 from "../assets/slider-image2.jpeg";
 import sliderImage3 from "../assets/slider-image3.jpeg";
 import sliderImage4 from "../assets/slider-image4.jpeg";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import wannaCreateSomething from "../assets/WANNA CREATE SOMETHING_.svg";
 
 const CarouselBackground = () => {
   const [position, setPosition] = useState(0);
-
   const images = [sliderImage1, sliderImage2, sliderImage3, sliderImage4];
+
+  // Calculate total width of a single set of images
+  const imageWidth = 400; // Width of each image
+  const gapWidth = 32; // 8rem (md:gap-8) converted to pixels
+  const totalWidth = images.length * (imageWidth + gapWidth);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setPosition((prev) => (prev - 1) % (400 * images.length));
-    }, 50);
+      setPosition((prev) => {
+        if (prev < -totalWidth) {
+          return 0;
+        }
+        return prev - 3;
+      });
+    }, 30);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [totalWidth]);
 
   return (
     <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
@@ -24,22 +35,67 @@ const CarouselBackground = () => {
         className="flex gap-4 md:gap-8 absolute transition-transform duration-500"
         style={{ transform: `translateX(${position}px)` }}
       >
-        {[...images, ...images, ...images].map((src, index) => (
-          <div
-            key={index}
-            className="w-[200px] md:w-[400px] h-[200px] md:h-[400px] flex-shrink-0"
-          >
-            <img
-              src={src}
-              alt={`Carousel item ${index}`}
-              className="w-full h-full object-cover rounded-lg filter grayscale"
-            />
-          </div>
-        ))}
+        {/* Render 5 sets of images to ensure smooth infinite scroll */}
+        {[...images, ...images, ...images, ...images, ...images].map(
+          (src, index) => (
+            <div
+              key={index}
+              s
+              className="w-[200px] md:w-[400px] h-[200px] md:h-[400px] flex-shrink-0"
+            >
+              <img
+                src={src}
+                alt={`Carousel item ${index}`}
+                className="w-full h-full object-cover rounded-lg filter grayscale"
+              />
+            </div>
+          )
+        )}
       </div>
     </div>
   );
 };
+
+const ButtonMailto = ({
+  mailto,
+  label,
+  submitted,
+  setSubmitted,
+  onEmailSent,
+}) => {
+  return (
+    <Link
+      to="#"
+      onClick={(e) => {
+        e.preventDefault();
+        const mailtoLink = `mailto:${mailto}`;
+        window.location.href = mailtoLink;
+        setSubmitted(true);
+        onEmailSent();
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 2000);
+      }}
+      className="absolute right-0 top-0 h-full aspect-square bg-[#E90074] hover:bg-pink-500  text-white flex items-center justify-center"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M14 5l7 7m0 0l-7 7m7-7H3"
+        />
+      </svg>
+    </Link>
+  );
+};
+
 const ContactForm = () => {
   const [step, setStep] = useState(0);
   const [details, setDetails] = useState({
@@ -47,8 +103,7 @@ const ContactForm = () => {
     message: "",
     email: "",
   });
-  const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false); // New state for success message
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setDetails((prev) => ({
@@ -65,124 +120,126 @@ const ContactForm = () => {
     }
   };
 
-  const handleKeyInput = (e, field) => {
-    if (e.key === "Enter" || e.type === "input") {
-      let timeout = setTimeout(() => {
-        if (details[field].trim()) {
-          handleNext();
-        }
-      }, 2000);
-
-      return () => clearTimeout(timeout);
+  const handleClick = () => {
+    if (step < 2) {
+      handleNext();
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!details.email.trim()) return;
+  const recipientEmail = "lalit284546@gmail.com";
 
-    setLoading(true);
-    try {
-      const response = await fetch(
-        "https://formsubmit.co/rs1768867@gmail.com",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(details),
-        }
-      );
+  // Construct the mailto string with proper encoding
+  const mailtoString = `${recipientEmail}?subject=${encodeURIComponent(
+    `New Inquiry from ${details.name}`
+  )}&body=${encodeURIComponent(
+    `${details.message}\n\nContact: ${details.email}`
+  )}`;
 
-      if (response.ok) {
-        setDetails({ name: "", message: "", email: "" });
-        setStep(0);
-        setSubmitted(true); // Show success message
-
-        // Hide message after 3 seconds
-        setTimeout(() => setSubmitted(false), 3000);
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    }
-    setLoading(false);
+  const resetForm = () => {
+    setTimeout(() => {
+      setStep(0);
+      setDetails({
+        name: "",
+        message: "",
+        email: "",
+      });
+    }, 2000); // Reset form after 2 seconds
   };
 
   return (
     <div className="relative min-h-screen translate-y-10 md:translate-y-20 z-10 max-w-6xl mx-auto px-4 md:px-6">
-      <div className="bg-black/50 backdrop-blur-md rounded-xl p-6 md:p-[200px] text-white">
-        <h1 className="-translate-y-4 md:-translate-y-10 text-3xl md:text-5xl text-center font-extrabold leading-loose mt-10 md:mt-20 mb-2 tracking-tighter">
-          WANNA <span className="text-pink-500">CREATE</span> SOMETHING?
-        </h1>
+      <div className="bg-black/50 backdrop-blur-md rounded-xl p-6 md:p-[100px] text-white">
+        <img
+          src={wannaCreateSomething}
+          alt="wanna create something"
+          className="-translate-y-10 max-w-full"
+        />
+
         <p className="text-center -translate-y-8 md:-translate-y-16 text-base md:text-lg mt-10 mb-8">
           Let's connect
         </p>
 
-        <form onSubmit={handleSubmit}>
-          <div className="space-y-6">
+        <div className="space-y-4">
+          <div className="relative max-w-xl mx-auto">
             {step === 0 && (
-              <div className="space-y-4">
-                <input
-                  type="text"
-                  name="name"
-                  value={details.name}
-                  onChange={handleChange}
-                  onKeyDown={(e) => handleKeyInput(e, "name")}
-                  onInput={(e) => handleKeyInput(e, "name")}
-                  placeholder="Your name"
-                  className="w-full placeholder:text-center bg-gray-800/50 backdrop-blur rounded-lg px-4 py-6 md:py-10 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500"
-                />
-              </div>
+              <input
+                type="text"
+                name="name"
+                value={details.name}
+                onChange={handleChange}
+                placeholder="Your name"
+                className="w-full placeholder:text-center bg-gray-800/50 backdrop-blur rounded-lg pl-4 pr-16 py-6 md:py-8 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500"
+              />
             )}
             {step === 1 && (
-              <div className="space-y-4">
-                <input
-                  type="text"
-                  name="message"
-                  value={details.message}
-                  onChange={handleChange}
-                  onKeyDown={(e) => handleKeyInput(e, "message")}
-                  onInput={(e) => handleKeyInput(e, "message")}
-                  placeholder="Your message"
-                  className="w-full placeholder:text-center bg-gray-800/50 backdrop-blur rounded-lg px-4 py-6 md:py-10 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500"
-                />
-              </div>
+              <input
+                name="message"
+                value={details.message}
+                onChange={handleChange}
+                placeholder="Your message"
+                rows="3"
+                className="w-full placeholder:text-center bg-gray-800/50 backdrop-blur rounded-lg pl-4 pr-16 py-6 md:py-8 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500"
+              />
             )}
             {step === 2 && (
-              <div className="space-y-4 relative">
-                <input
-                  type="email"
-                  name="email"
-                  value={details.email}
-                  onChange={handleChange}
-                  placeholder="Your Email"
-                  className="w-full placeholder:text-center bg-gray-800/50 backdrop-blur rounded-lg px-4 py-6 md:py-10 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500"
-                />
-                <button type="submit" onClick={handleSubmit} className="hidden">
-                  Next
-                </button>
-
-                {/* Success message with check mark */}
-                {submitted && (
-                  <div className="absolute bottom-2 right-4 flex items-center text-green-500 text-sm">
-                    ✅ Form submitted
-                  </div>
-                )}
-              </div>
+              <input
+                type="email"
+                name="email"
+                value={details.email}
+                onChange={handleChange}
+                placeholder="Your Email"
+                className="w-full placeholder:text-center bg-gray-800/50 backdrop-blur rounded-lg pl-4 pr-16 py-6 md:py-8 text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500"
+              />
             )}
 
-            <div className="flex gap-2 justify-center mt-4">
-              {[0, 1, 2].map((index) => (
-                <div
-                  key={index}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    step === index ? "bg-pink-500" : "bg-gray-600"
-                  }`}
-                />
-              ))}
-            </div>
+            {step < 2 ? (
+              <button
+                onClick={handleClick}
+                className="absolute  right-0 top-0 h-full aspect-square bg-[#E90074] hover:bg-pink-500 text-white flex items-center justify-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </button>
+            ) : (
+              <ButtonMailto
+                submitted={submitted}
+                setSubmitted={setSubmitted}
+                onEmailSent={resetForm}
+                label="Send Email"
+                mailto={mailtoString}
+              />
+            )}
           </div>
-        </form>
+
+          {submitted && (
+            <div className="text-green-500 text-center mt-2">
+              ✅ Email Sent!
+            </div>
+          )}
+
+          <div className="flex gap-2 justify-center mt-4">
+            {[0, 1, 2].map((index) => (
+              <div
+                key={index}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  step === index ? "bg-pink-500" : "bg-gray-600"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

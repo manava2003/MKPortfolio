@@ -13,13 +13,13 @@ const PinkSectionCarousel = () => {
   const slides = [
     {
       image: pinkStatue,
-      para1: `It is an avant-garde leather garment collection inspired by Miley Cyrus, celebrating her fearless approach to fashion and individuality. It pays homage to rock ‘n’ roll culture, and embraces an eclectic fusion of styles. It’s a unique and immersive fashion experience that invites individuals to break free from the ordinary and celebrate their inner wilderness. `,
-      para2: `It represents not only the sunny side of self-expression, but also the darker, more introspective aspects of human existence. Each garment is a reflection of of her life’s highs and lows, translating her personal triumphs and traumas into intricate designs that tell a profound story.`,
+      para1: `It is an avant-garde leather garment collection inspired by Miley Cyrus, celebrating her fearless approach to fashion and individuality. It pays homage to rock ‘n’ roll culture, and embraces an eclectic fusion of styles. It's a unique and immersive fashion experience that invites individuals to break free from the ordinary and celebrate their inner wilderness. `,
+      para2: `It represents not only the sunny side of self-expression, but also the darker, more introspective aspects of human existence. Each garment is a reflection of of her life's highs and lows, translating her personal triumphs and traumas into intricate designs that tell a profound story.`,
     },
     {
       image: girlWithNewspaper,
-      para1: `It is an avant-garde leather garment collection inspired by Miley Cyrus, celebrating her fearless approach to fashion and individuality. It pays homage to rock ‘n’ roll culture, and embraces an eclectic fusion of styles. It’s a unique and immersive fashion experience that invites individuals to break free from the ordinary and celebrate their inner wilderness. `,
-      para2: `It represents not only the sunny side of self-expression, but also the darker, more introspective aspects of human existence. Each garment is a reflection of of her life’s highs and lows, translating her personal triumphs and traumas into intricate designs that tell a profound story.`,
+      para1: `It is an avant-garde leather garment collection inspired by Miley Cyrus, celebrating her fearless approach to fashion and individuality. It pays homage to rock 'n' roll culture, and embraces an eclectic fusion of styles. It's a unique and immersive fashion experience that invites individuals to break free from the ordinary and celebrate their inner wilderness. `,
+      para2: `It represents not only the sunny side of self-expression, but also the darker, more introspective aspects of human existence. Each garment is a reflection of of her life's highs and lows, translating her personal triumphs and traumas into intricate designs that tell a profound story.`,
     },
   ];
 
@@ -29,20 +29,14 @@ const PinkSectionCarousel = () => {
       whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8 }}
-      className=" rounded-t-lg flex items-center justify-center"
-      style={{
-        width: "100%",
-        maxWidth: "1154px",
-        height: "523px",
-        margin: "0 auto",
-      }}
+      className="rounded-t-lg flex items-center justify-center w-full h-auto md:h-[523px] mx-auto"
     >
       <Swiper
-        modules={[Pagination, Autoplay]} // Include Autoplay module
+        modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
         autoplay={{
-          delay: 3000, // Adjust this value to control the autoplay speed (3 seconds in this case)
-          disableOnInteraction: false, // Keep autoplay running after user interaction
+          delay: 3000,
+          disableOnInteraction: false,
         }}
         spaceBetween={30}
         slidesPerView={1}
@@ -51,35 +45,33 @@ const PinkSectionCarousel = () => {
         {slides.map((slide, index) => (
           <SwiperSlide
             key={index}
-            className="grid grid-cols-2 gap-10 items-center p-5"
+            className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 items-center p-4 md:p-5"
           >
             <figure
-              className=""
+              className="w-full md:w-[500px] h-[300px] md:h-[489px] mx-auto md:mx-0"
               style={{
-                width: "500px",
-                height: "489px",
                 borderRadius: "4px 0 0 0",
               }}
             >
               <img
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-full object-scale-down -translate-x-20 "
+                className="w-full h-full object-scale-down md:-translate-x-20"
               />
             </figure>
             <div
-              className="text-white -translate-x-20 -translate-y-10"
+              className="text-white md:-translate-y-10 w-full md:w-[600px]"
               style={{
-                width: "600px",
                 fontFamily: "Poppins",
-                fontSize: "18px",
+                fontSize: "16px",
+                md: { fontSize: "18px" },
                 fontWeight: "400",
                 lineHeight: "27px",
                 textAlign: "justify",
               }}
             >
               <div className="flex flex-col gap-2">
-                <span className="">{slide.para1}</span>
+                <span>{slide.para1}</span>
                 <span>{slide.para2}</span>
               </div>
             </div>

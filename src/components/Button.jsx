@@ -2,26 +2,23 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 
 export default function SlideArrowButton({
-  text = "Let's Talk",
-  primaryColor = "#E91E63 ",
+  text = "Let's talk",
+  primaryColor = "#E91E63",
   className = "",
   ...props
 }) {
   return (
     <button
-      className={`group relative rounded-md border border-white bg-white p-2 text-xl font-semibold ${className}`}
+      className={`group relative  border border-white px-8 py-4  text-xl font-extrathin transition-all duration-300 ease-in-out hover:border-transparent ${className}`}
       {...props}
     >
       <div
-        className="absolute left-0 top-0 flex h-full w-11 items-center justify-end  rounded-md transition-all duration-200 ease-in-out group-hover:w-full"
+        className="absolute left-0 top-0 h-full w-0 rounded-md transition-all duration-300 ease-in-out group-hover:w-full"
         style={{ backgroundColor: primaryColor }}
-      >
-        <span className="mr-3 text-white transition-all duration-200 ease-in-out">
-          <ArrowRight size={20} />
-        </span>
-      </div>
-      <span className="relative left-4 z-10 whitespace-nowrap px-8 font-semibold text-black transition-all duration-200 ease-in-out group-hover:-left-3 group-hover:text-white">
+      />
+      <span className="relative z-10 flex items-center gap-2 text-white transition-all duration-300">
         {text}
+        <ArrowRight size={20} className="font-light" />
       </span>
     </button>
   );

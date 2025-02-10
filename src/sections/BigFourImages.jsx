@@ -8,6 +8,7 @@ import manicJacket from "../assets/MANIAC BIKER JACKET.png";
 import metaverseCostume from "../assets/METAVERSE COSTUME.png";
 import priscousImage from "../assets/PRECOCIOUS ORANGE.png";
 import blackJacketGirl from "../assets/frame1.jpeg";
+import torphicalSensation from "../assets/TROPICAL SENSATION.svg";
 
 const BigFourImages = () => {
   const images = [
@@ -31,7 +32,7 @@ const BigFourImages = () => {
     },
     {
       src: blackJacketGirl,
-      titleImg: priscousImage,
+      titleImg: torphicalSensation,
       subtitle: "Leather Design",
       alt: "Street Fashion Design",
     },

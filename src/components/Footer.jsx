@@ -1,4 +1,3 @@
-import { footer } from "framer-motion/client";
 import FooterImageLogo from "../assets/Group 16.png";
 import UnderLine from "../assets/Line 9.png";
 export default function Component() {
@@ -83,7 +82,7 @@ export default function Component() {
           </div>
         </div>
       </div>
-      <div className="bg-pink-800 h-[30px] translate-y-10"></div>
+      <div className="bg-pink-800 h-[50px] translate-y-10"></div>
     </footer>
   );
 }

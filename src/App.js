@@ -1,5 +1,4 @@
 import "./App.css";
-
 import { Images } from "./components/Images";
 import { About } from "./sections/About";
 import { Services } from "./sections/Services";
@@ -242,7 +241,7 @@ function App() {
             </div>
 
             {/* Carousel Section */}
-            <div className="w-full  bg-pink-700 p-8 md:p-12 lg:p-24">
+            <div className="mx-36 bg-pink-700 p-8 md:p-12 lg:p-24">
               <PinkSectionCarousel />
             </div>
 

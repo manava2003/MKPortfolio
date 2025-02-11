@@ -4,10 +4,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "custom-image": "url('./assets/Group 1.png')",
-        "z-index": "-2", // Define the background image
-      },
+      // backgroundImage: {
+      //   "custom-image": "url('./assets/Group 1.png')",
+      //   "z-index": "-2", // Define the background image
+      // },
       backgroundSize: {
         "150%": "150%",
         "200%": "200%",

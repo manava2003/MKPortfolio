@@ -4,7 +4,7 @@ import ParaPhoto from "../assets/Asaimage.png";
 
 export const About = () => {
   return (
-    <div className="text-white mx-auto text-center self-center items-center px-40">
+    <div className="text-white mx-[70px] text-center self-center items-center px-40">
       <div className=" p-9">
         <span className=" text-[20px]">[About]</span>
         <br></br>
@@ -41,9 +41,13 @@ export const About = () => {
         <br></br>
         <br></br>
         <div className="flex bg-[#171717] h-[618px] w-[1151px]  relative left-[-70px]">
-          <img alt="mk" src={mk} className="w-[420px] h-[575px]"></img>
-          <div className="my-auto m-4">
-            <div className="text-[50px] mx-auto">
+          <img
+            alt="mk"
+            src={mk}
+            className=" w-[420px] h-[634px] rounded-md"
+          ></img>
+          <div className="">
+            <div className="mt-24 mx-auto">
               <svg
                 width="213"
                 height="55"
@@ -102,7 +106,7 @@ export const About = () => {
               </svg>
             </div>
 
-            <img className="pt-10" src={ParaPhoto} alt="paraphoto" />
+            <img className="pt-10 " src={ParaPhoto} alt="paraphoto" />
           </div>
         </div>
       </div>

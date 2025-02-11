@@ -5,8 +5,7 @@ import s3 from "../assets/Mask group.png";
 
 export const Services = () => {
   return (
-    <div className="text-white mx-auto text-center self-center items-center px-20 mb-[35rem]">
-      <span className=" text-[20px]">[Services]</span>
+    <div className="text-white translate-x-24 mx-auto   px-20 mb-[45rem]">
       <br></br>
       <br></br>
 
@@ -15,7 +14,7 @@ export const Services = () => {
       <br></br>
 
       <div className="flex gap-10">
-        <div className="translate-y-1/2">
+        <div className="translate-y-1/2 ">
           <div className="bg-[#171717] w-[367px] h-[710px] duration-200 rounded-md relative overflow-hidden">
             <img
               alt="s2"

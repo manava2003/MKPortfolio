@@ -18,6 +18,7 @@ import Footer from "./components/Footer";
 import MileyCollection from "./assets/MILEY COLLECTION.png";
 import SplashScreen from "./components/SplashScreen";
 import SlideArrowButton from "./components/Button";
+import customOrderBelowtext from "./assets/cutomOrderBelowText.png";
 
 function App() {
   const aboutRef = useRef(null);
@@ -31,8 +32,17 @@ function App() {
   };
 
   return (
-    <div className=" bg-black  min-h-screen w-full bg-custom-image overflow-y-clip  bg-center bg-100% overflow-x-hidden">
-      {/* <SplashScreen /> */}
+    <div
+      style={{
+        backgroundImage: `
+          linear-gradient(to right, rgba(233, 0, 116, 0.25) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(233, 0, 116, 0.25) 1px, transparent 1px)`,
+        backgroundSize: "400px 400px",
+        backgroundPosition: "center center",
+      }}
+      className=" bg-black min-h-screen w-full overflow-y-clip bg-center bg-100% overflow-x-hidden"
+    >
+      <SplashScreen />
 
       <CustomCursor></CustomCursor>
       {/* Header */}
@@ -128,7 +138,7 @@ function App() {
         whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
         viewport={{ once: true, margin: "-200px" }}
         transition={{ duration: 1.0 }}
-        className=" flex justify-center py-6 top-[700px] mx-auto"
+        className=" flex justify-center translate-x-4 py-6 top-[700px] mx-auto"
       >
         <svg
           width="101"
@@ -152,9 +162,17 @@ function App() {
         viewport={{ once: true, margin: "-200px" }}
         transition={{ duration: 1.0 }}
         ref={servicesRef}
+        className=""
       >
+        <span className="mx-[699px] text-center text-[20px]">[Services]</span>
+
         <Services></Services>
 
+        <img
+          className="translate-x-[200px] "
+          src={customOrderBelowtext}
+          alt="service below text"
+        />
         <motion.div
           initial={{ opacity: 0, y: 100, rotateX: 30 }}
           whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
@@ -241,7 +259,7 @@ function App() {
             </div>
 
             {/* Carousel Section */}
-            <div className="mx-36 bg-pink-700 p-8 md:p-12 lg:p-24">
+            <div className="mx-36 bg-pink-900 p-10 ">
               <PinkSectionCarousel />
             </div>
 

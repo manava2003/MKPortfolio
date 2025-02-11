@@ -34,26 +34,26 @@ const CustomCursor = () => {
       window.removeEventListener("resize", handleResize);
       document.body.style.cursor = "auto";
     };
-  });   
+  });
 
-  const spotlightRadius = Math.min(screenSize.width, screenSize.height) * 0.66;
+  // const spotlightRadius = Math.min(screenSize.width, screenSize.height) * 0.66;
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999]">
       {/* Soft background light effect */}
       <div
         className="absolute inset-0"
-        style={{
-          background: isVisible
-            ? `radial-gradient(
-                circle ${spotlightRadius}px at ${position.x}px ${position.y}px,
-                rgba(255, 255, 255, 0.15) 0%,
-                rgba(255, 255, 255, 0.1) 35%,
-                rgba(255, 255, 255, 0.05) 60%,
-                rgba(255, 255, 255, 0) 80%
-              )`
-            : "transparent",
-          transition: "background 150ms ease-out",
-        }}
+        // style={{
+        //   background: isVisible
+        //     ? `radial-gradient(
+        //         circle ${spotlightRadius}px at ${position.x}px ${position.y}px,
+        //         rgba(255, 255, 255, 0.15) 0%,
+        //         rgba(255, 255, 255, 0.1) 35%,
+        //         rgba(255, 255, 255, 0.05) 60%,
+        //         rgba(255, 255, 255, 0) 80%
+        //       )`
+        //     : "transparent",
+        //   transition: "background 150ms ease-out",
+        // }}
       />
       {/* Outer white circle */}
       <div

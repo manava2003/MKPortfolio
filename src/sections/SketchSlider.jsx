@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import sliderImage1 from "../assets/slider-image1.png";
 import sliderImage2 from "../assets/slider-image2.jpeg";
 import sliderImage3 from "../assets/slider-image3.jpeg";
@@ -147,7 +147,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="relative min-h-screen translate-y-10 md:translate-y-20 z-10 max-w-6xl mx-auto px-4 md:px-6">
+    <div className="relative min-h-screen translate-y-10 md:translate-y-20 z-10 max-w-8xl mx-auto px-4 md:px-6">
       <div className="bg-black/50 backdrop-blur-md rounded-xl p-6 md:p-[100px] text-white">
         <img
           src={wannaCreateSomething}

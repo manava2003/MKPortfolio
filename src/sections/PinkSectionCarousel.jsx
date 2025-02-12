@@ -90,7 +90,7 @@ const PinkSectionCarousel = () => {
             key={index}
             onClick={() => handlePaginationClick(index)}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              currentSlide === index ? "bg-neutral-100" : "bg-pink-400"
+              currentSlide === index ? "bg-yellow-200" : "bg-pink-400"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

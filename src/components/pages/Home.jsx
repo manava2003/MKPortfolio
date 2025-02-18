@@ -57,7 +57,7 @@ const Home = () => {
       }}
       className="min-h-screen w-full overflow-y-clip bg-center bg-100% overflow-x-hidden"
     >
-      {/* <SplashScreen /> */}
+      <SplashScreen />
 
       <CustomCursor></CustomCursor>
       {/* Header */}

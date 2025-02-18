@@ -9,6 +9,7 @@ import metaverseCostume from "../assets/METAVERSE COSTUME.png";
 import priscousImage from "../assets/PRECOCIOUS ORANGE.png";
 import blackJacketGirl from "../assets/frame1.jpeg";
 import torphicalSensation from "../assets/TROPICAL SENSATION.svg";
+import { Link } from "react-router-dom";
 
 const BigFourImages = () => {
   const images = [
@@ -17,26 +18,33 @@ const BigFourImages = () => {
       titleImg: manicJacket,
       subtitle: "Leather Design",
       alt: "Maniac Biker Jacket Image",
+      page: 1,
     },
     {
       src: frame3,
       titleImg: metaverseCostume,
       subtitle: " Leather Design",
       alt: "Urban Style Image",
+      page: 2,
     },
     {
       src: frame4,
       titleImg: priscousImage,
       subtitle: " Leather Design",
       alt: "Street Fashion Image",
+      page: 3,
     },
     {
       src: blackJacketGirl,
       titleImg: torphicalSensation,
       subtitle: "Leather Design",
       alt: "Street Fashion Design",
+      page: 4,
     },
   ];
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   return (
     <motion.div
@@ -48,32 +56,34 @@ const BigFourImages = () => {
     >
       <div className="flex flex-col gap-16 max-w-6xl w-full">
         {images.map((image, index) => (
-          <div key={index} className="w-full">
-            <div className="relative aspect-[3/1] overflow-hidden rounded-lg group">
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px] group-hover:brightness-50"
-              />
-              <div className="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+          <Link onClick={scrollToTop} to={`/project${image.page}`} key={index}>
+            <div className="w-full">
+              <div className="relative aspect-[3/1] overflow-hidden rounded-lg group">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px] group-hover:brightness-50"
+                />
+                <div className="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 
-              <div className="absolute  ml-8 bottom-0 left-0 p-6 opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-                <div className="h-full">
-                  <motion.img
-                    src={image.titleImg}
-                    alt={image.alt}
-                    initial={{ scale: 0.5 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className="h-20 object-contain"
-                  />
+                <div className="absolute  ml-8 bottom-0 left-0 p-6 opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                  <div className="h-full">
+                    <motion.img
+                      src={image.titleImg}
+                      alt={image.alt}
+                      initial={{ scale: 0.5 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{ duration: 0.5 }}
+                      className="h-20 object-contain"
+                    />
+                  </div>
+                  <p className="text-white/90 mt-2 text-lg">
+                    [ {image.subtitle} ]
+                  </p>
                 </div>
-                <p className="text-white/90 mt-2 text-lg">
-                  [ {image.subtitle} ]
-                </p>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </motion.div>

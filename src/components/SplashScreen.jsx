@@ -59,13 +59,25 @@ export default function SplashScreen() {
           exit="exit"
           style={{
             background:
-              "radial-gradient(circle, rgba(255,192,203,1) 0%, rgba(255,105,180,1) 35%, rgba(199,21,133,1) 70%, rgba(0,0,0,1) 100%)",
+              "radial-gradient(circle, #FF69B4 0%, #FF1493 35%, #8B008B 70%, #000000 100%)",
           }}
         >
-          <div className="absolute left-0 top-0 bottom-0 w-1/4 bg-pink-100 blur-3xl opacity-50" />
-          <div className="absolute right-0 top-0 bottom-0 w-1/4 bg-pink-100 blur-3xl opacity-50" />
+          <div
+            className="absolute left-0 rounded-lg top-0 bottom-0 w-1/4 opacity-50"
+            style={{
+              background:
+                "radial-gradient(circle at center, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.95) 100%)",
+            }}
+          />
+          <div
+            className="absolute right-0 top-0 bottom-0 w-1/4 opacity-50"
+            style={{
+              background:
+                "radial-gradient(circle at center, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.95) 100%)",
+            }}
+          />
           <motion.div
-            className="relative z-10 flex items-center justify-center"
+            className="relative z-10  flex items-center justify-center"
             variants={imageVariants}
           >
             <img

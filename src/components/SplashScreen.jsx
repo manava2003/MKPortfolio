@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import BigLogo from "../assets/Group 14.png";
-
 export default function SplashScreen() {
   const [showSplash, setShowSplash] = useState(true);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 2500);
+    }, 1600); // Adjust this value to control how long the splash screen shows
     return () => clearTimeout(timer);
   }, []);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -19,6 +16,7 @@ export default function SplashScreen() {
       transition: {
         duration: 0.5,
         when: "beforeChildren",
+        staggerChildren: 0.3,
       },
     },
     exit: {
@@ -28,9 +26,10 @@ export default function SplashScreen() {
   };
 
   const imageVariants = {
-    hidden: { scale: 0, opacity: 0 },
+    hidden: { scale: 0.5, y: 50, opacity: 0 },
     visible: {
-      scale: 2,
+      scale: 1,
+      y: 0,
       opacity: 1,
       transition: {
         duration: 1,
@@ -38,54 +37,39 @@ export default function SplashScreen() {
       },
     },
     exit: {
-      scale: 0,
+      scale: 0.5,
+      y: -50,
       opacity: 0,
-      filter: "blur(10px)",
       transition: {
         duration: 0.5,
         ease: [0.6, -0.05, 0.01, 0.99],
       },
     },
   };
-
   return (
     <AnimatePresence>
       {showSplash && (
         <motion.div
-          className="fixed inset-0 flex items-center justify-center z-50 overflow-hidden"
+          className="fixed inset-0 flex items-center justify-center  z-50 overflow-hidden"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           exit="exit"
           style={{
             background:
-              "radial-gradient(circle, #FF69B4 0%, #FF1493 35%, #8B008B 70%, #000000 100%)",
+              "radial-gradient(circle, rgba(255,192,203,1) 0%, rgba(255,105,180,1) 35%, rgba(199,21,133,1) 70%, rgba(0,0,0,1) 100%)",
           }}
         >
-          <div
-            className="absolute left-0 rounded-lg top-0 bottom-0 w-1/4 opacity-50"
-            style={{
-              background:
-                "radial-gradient(circle at center, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.95) 100%)",
-            }}
-          />
-          <div
-            className="absolute right-0 top-0 bottom-0 w-1/4 opacity-50"
-            style={{
-              background:
-                "radial-gradient(circle at center, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.95) 100%)",
-            }}
-          />
-          <motion.div
-            className="relative z-10  flex items-center justify-center"
-            variants={imageVariants}
-          >
-            <img
+          <div className="absolute left-0 top-0 bottom-0 w-1/4 bg-pink-100 blur-3xl opacity-50" />
+          <div className="absolute right-0 top-0 bottom-0 w-1/4 bg-pink-100 blur-3xl opacity-50" />
+          <div className="text-gray-800 text-center px-4 relative z-10">
+            <motion.img
               src={BigLogo}
               alt="Splash screen logo"
-              className="w-[300px] h-[300px] object-contain"
+              className="w-[700px] h-[700px] object-contain"
+              variants={imageVariants}
             />
-          </motion.div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

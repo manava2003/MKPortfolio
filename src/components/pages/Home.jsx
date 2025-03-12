@@ -36,6 +36,7 @@ const Home = () => {
   const contactRef = useRef(null);
 
   // Scroll to a specific section
+
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
@@ -58,14 +59,12 @@ const Home = () => {
       className="min-h-screen w-full overflow-y-clip bg-center bg-100% overflow-x-hidden"
     >
       <SplashScreen />
-
       <CustomCursor></CustomCursor>
       {/* Header */}
       <header className="flex justify-between items-center py-6 px-6">
         <img src={SmallLogo} alt="small logo" />
         <SlideArrowButton />
       </header>
-
       {/* Main Section */}
       <main className="">
         {/* Logo Section */}
@@ -73,7 +72,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 100, rotateX: 30 }}
           whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, delay: 3 }}
+          transition={{ duration: 0.8, delay: 2 }}
           className="flex justify-center"
         >
           <img src={BigLogo} alt="big logo" />
@@ -84,7 +83,6 @@ const Home = () => {
           <Images />
         </div>
       </main>
-
       {/* Navbar */}
       <Navbar
         scrollToSection={scrollToSection}
@@ -93,7 +91,6 @@ const Home = () => {
         workRef={workRef}
         contactRef={contactRef}
       />
-
       {/* Decorative SVG */}
       <motion.div
         initial={{ opacity: 0, y: 100, rotateX: 30 }}
@@ -178,7 +175,6 @@ const Home = () => {
           <Illustrations></Illustrations>
         </motion.div>
       </motion.div>
-
       {/* Decorative SVG */}
       <motion.div
         initial={{ opacity: 0, y: 100, rotateX: 30 }}
@@ -211,7 +207,6 @@ const Home = () => {
 
         <span className=" text-[20px] -translate-x-12 mb-10">[Work]</span>
       </motion.div>
-
       {/* pink section */}
       <motion.div
         initial={{ opacity: 0, y: 100, rotateX: 30 }}

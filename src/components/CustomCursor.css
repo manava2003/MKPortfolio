@@ -1,28 +1,35 @@
 /* Hide the default cursor */
 body {
-    cursor: none;
+  cursor: none;
+}
+
+/* Custom glowing cursor */
+.custom-cursor {
+  position: fixed;
+  width: 40px; /* Increased size for the lampshade effect */
+  height: 40px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 30%,
+    rgba(255, 255, 255, 0.2) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-radius: 50%;
+  pointer-events: none; /* Prevent interaction with other elements */
+  transform: translate(-50%, -50%); /* Center the cursor */
+  z-index: 10000; /* Ensure it stays on top */
+  animation: glowPulse 2s infinite; /* Add glowing animation */
+}
+
+/* Glowing animation */
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4);
   }
-  
-  /* Custom glowing cursor */
-  .custom-cursor {
-    position: fixed;
-    width: 40px; /* Increased size for the lampshade effect */
-    height: 40px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
-    border-radius: 50%;
-    pointer-events: none; /* Prevent interaction with other elements */
-    transform: translate(-50%, -50%); /* Center the cursor */
-    z-index: 10000; /* Ensure it stays on top */
-    animation: glowPulse 2s infinite; /* Add glowing animation */
+  50% {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 1),
+      0 0 60px rgba(255, 255, 255, 0.8), 0 0 80px rgba(255, 255, 255, 0.6);
   }
-  
-  /* Glowing animation */
-  @keyframes glowPulse {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4);
-    }
-    50% {
-      box-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.8), 0 0 80px rgba(255, 255, 255, 0.6);
-    }
-  }
-  
+}

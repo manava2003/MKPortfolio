@@ -126,7 +126,7 @@ const ContactForm = () => {
     }
   };
 
-  const recipientEmail = "lalit284546@gmail.com";
+  const recipientEmail = "mkbae@gmail.com";
 
   // Construct the mailto string with proper encoding
   const mailtoString = `${recipientEmail}?subject=${encodeURIComponent(
@@ -147,12 +147,12 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="relative min-h-screen translate-y-10 md:translate-y-20 z-10 max-w-8xl mx-auto px-4 md:px-6">
+    <div className="relative min-h-[50vh] md:min-h-screen translate-y-10 md:translate-y-20 z-10 max-w-8xl mx-auto px-4 md:px-6">
       <div className="bg-black/50 backdrop-blur-md rounded-xl p-6 md:p-[100px] text-white">
         <img
           src={wannaCreateSomething}
           alt="wanna create something"
-          className="-translate-y-10 max-w-full"
+          className="md:-translate-y-10 max-w-full"
         />
 
         <p className="text-center -translate-y-8 md:-translate-y-16 text-base md:text-lg mt-10 mb-8">
@@ -252,7 +252,7 @@ const SketchSlider = () => {
       whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8 }}
-      className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden pt-16 md:pt-32"
+      className="relative min-h-[50vh] md:min-h-screen flex items-center justify-center bg-black overflow-hidden pt-16 md:pt-32"
     >
       <CarouselBackground />
       <ContactForm />

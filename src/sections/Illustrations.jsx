@@ -5,25 +5,20 @@ import illustartionText from "../assets/MY ILLUSTRATIONS.png";
 import illustrationRectangele from "../assets/Rectangle 13.png";
 const Illustrations = () => {
   return (
-    <div className="relative translate-x-14  left-36 max-w-fit mt-[20rem]">
+    <div className="relative md:translate-x-14  md:left-36 max-w-fit mt-[20rem]">
       <div className="flex flex-row justify-start items-start gap-10">
         <img
           src={illustrationRectangele}
           alt="illustration reactangle"
-          className="-translate-y-14"
+          className=" w-[20px] translate-y-10  md:-translate-y-14"
         />
-        <div className="-translate-y-24">
-          {/* <p>
-          Every project is different. We strive to offer you a customized
-          solution that fulfills your artistic vision and conforms to the needs
-          of your production.
-        </p> */}
+        <div className="w-[270px] -translate-x-4 md:-translate-x-0 md:-translate-y-24">
           <img src={illustartionText} alt="illustartion text" />
         </div>
       </div>
 
       {/* Images Section */}
-      <div className="relative h-[600px] flex justify-center items-center">
+      <div className="relative md:h-[600px] flex justify-center items-center">
         <img src={illustartion} className="mt-16" alt="illustaions" />
       </div>
 

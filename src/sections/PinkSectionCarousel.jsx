@@ -40,7 +40,7 @@ const PinkSectionCarousel = () => {
         whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8 }}
-        className="rounded-t-lg flex items-center justify-center w-full h-auto md:h-[523px] mx-auto relative"
+        className="rounded-t-lg flex items-center justify-center w-full h-auto mx-auto relative"
       >
         <div className="w-full h-full overflow-hidden">
           <div
@@ -50,31 +50,31 @@ const PinkSectionCarousel = () => {
             {slides.map((slide, index) => (
               <div
                 key={index}
-                className="min-w-full grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 items-center p-4 md:p-5"
+                className="min-w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10 items-center p-2 md:p-5"
               >
-                <figure
-                  className="w-full md:w-[600px] h-[300px] md:h-[489px] mx-auto md:mx-0"
-                  style={{ borderRadius: "4px 0 0 0" }}
-                >
+                <figure className="w-full h-[200px] sm:h-[250px] md:h-[489px] mx-auto">
                   <img
                     src={slide.image}
                     alt={`Slide ${index + 1}`}
-                    className="w-full h-full object-scale-down md:-translate-x-20"
+                    className="w-full h-full object-contain md:-translate-x-20"
                   />
                 </figure>
                 <div
-                  className="text-white -translate-x-36  w-full md:w-[600px]"
+                  className="text-white w-full px-3 md:px-0 md:-translate-x-36 md:w-[600px]"
                   style={{
                     fontFamily: "Poppins",
-                    fontSize: "16px",
-                    fontWeight: "400",
-                    lineHeight: "27px",
+                    fontSize: "13px",
+                    lineHeight: "20px",
                     textAlign: "justify",
                   }}
                 >
-                  <div className="flex flex-col text-base md:-translate-y-20 ml-1 gap-2">
-                    <span>{slide.para1}</span>
-                    <span>{slide.para2}</span>
+                  <div className="flex flex-col gap-3 md:gap-2 md:-translate-y-20">
+                    <span className="md:text-base md:leading-[24px]">
+                      {slide.para1}
+                    </span>
+                    <span className="md:text-base md:leading-[24px]">
+                      {slide.para2}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -83,8 +83,8 @@ const PinkSectionCarousel = () => {
         </div>
       </motion.div>
 
-      {/* Custom Pagination - now outside and centered */}
-      <div className="flex rounded-md bg-pink-700 p-1 translate-y-16 gap-2 justify-center mt-4">
+      {/* Custom Pagination */}
+      <div className="flex rounded-md bg-pink-700 p-1 translate-y-4 md:translate-y-16 gap-2 justify-center mt-2 md:mt-4">
         {slides.map((_, index) => (
           <button
             key={index}

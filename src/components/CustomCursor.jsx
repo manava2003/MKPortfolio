@@ -3,58 +3,56 @@ import React, { useState, useEffect } from "react";
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
-  const [screenSize, setScreenSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const updatePosition = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+    // Check if device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    const handleMouseEnter = () => setIsVisible(true);
-    const handleMouseLeave = () => setIsVisible(false);
-    const handleResize = () => {
-      setScreenSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-    document.addEventListener("mousemove", updatePosition);
-    document.addEventListener("mouseenter", handleMouseEnter);
-    document.addEventListener("mouseleave", handleMouseLeave);
-    window.addEventListener("resize", handleResize);
-    document.body.style.cursor = "none";
+    // Initial check
+    checkMobile();
 
-    return () => {
-      document.removeEventListener("mousemove", updatePosition);
-      document.removeEventListener("mouseenter", handleMouseEnter);
-      document.removeEventListener("mouseleave", handleMouseLeave);
-      window.removeEventListener("resize", handleResize);
+    // Only add event listeners if not mobile
+    if (!isMobile) {
+      const updatePosition = (e) => {
+        setPosition({ x: e.clientX, y: e.clientY });
+      };
+
+      const handleMouseEnter = () => setIsVisible(true);
+      const handleMouseLeave = () => setIsVisible(false);
+
+      document.addEventListener("mousemove", updatePosition);
+      document.addEventListener("mouseenter", handleMouseEnter);
+      document.addEventListener("mouseleave", handleMouseLeave);
+      window.addEventListener("resize", checkMobile);
+      document.body.style.cursor = "none";
+
+      return () => {
+        document.removeEventListener("mousemove", updatePosition);
+        document.removeEventListener("mouseenter", handleMouseEnter);
+        document.removeEventListener("mouseleave", handleMouseLeave);
+        window.removeEventListener("resize", checkMobile);
+        document.body.style.cursor = "auto";
+      };
+    } else {
+      // Reset cursor style for mobile
       document.body.style.cursor = "auto";
-    };
-  });
 
-  // const spotlightRadius = Math.min(screenSize.width, screenSize.height) * 0.66;
+      // Only listen for resize events on mobile
+      window.addEventListener("resize", checkMobile);
+      return () => {
+        window.removeEventListener("resize", checkMobile);
+      };
+    }
+  }, [isMobile]); // Re-run effect when isMobile changes
+
+  // Don't render anything if on mobile
+  if (isMobile) return null;
+
   return (
-    <div className="pointer-events-none fixed inset-0 z-[9999]">
-      {/* Soft background light effect */}
-      <div
-        className="absolute inset-0"
-        // style={{
-        //   background: isVisible
-        //     ? `radial-gradient(
-        //         circle ${spotlightRadius}px at ${position.x}px ${position.y}px,
-        //         rgba(255, 255, 255, 0.15) 0%,
-        //         rgba(255, 255, 255, 0.1) 35%,
-        //         rgba(255, 255, 255, 0.05) 60%,
-        //         rgba(255, 255, 255, 0) 80%
-        //       )`
-        //     : "transparent",
-        //   transition: "background 150ms ease-out",
-        // }}
-      />
+    <div className="pointer-events-none fixed inset-0 z-[9999] hidden md:block">
       {/* Outer white circle */}
       <div
         className={`absolute h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full 

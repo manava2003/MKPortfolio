@@ -2,7 +2,7 @@ import FooterImageLogo from "../assets/Group 16.png";
 import UnderLine from "../assets/Line 9.png";
 export default function Component() {
   return (
-    <footer className="bg-[#E90074] pt-32 w-full h-[550px] flex flex-col">
+    <footer className=" md:-translate-y-0 bg-[#E90074] pt-32 w-full h-[550px] flex flex-col">
       <div className="container mx-auto px-20 pb-40 flex justify-between items-start">
         {/* Logo Section */}
         <div className="flex-1   ">

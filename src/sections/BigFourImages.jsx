@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import frame1 from "../assets/Frame1.png";
 import frame2 from "../assets/Frame2.png";
 import frame3 from "../assets/Frame3.png";
@@ -12,6 +12,8 @@ import torphicalSensation from "../assets/TROPICAL SENSATION.svg";
 import { Link } from "react-router-dom";
 
 const BigFourImages = () => {
+  const [touchedIndex, setTouchedIndex] = useState(null);
+
   const images = [
     {
       src: frame2,
@@ -52,34 +54,34 @@ const BigFourImages = () => {
       whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8 }}
-      className="min-h-screen flex items-center justify-center p-8"
+      className="min-h-screen flex items-center justify-center p-4 md:p-8"
     >
-      <div className="flex flex-col gap-16 max-w-6xl w-full">
+      <div className="flex flex-col gap-8 md:gap-16 max-w-6xl w-full">
         {images.map((image, index) => (
           <Link onClick={scrollToTop} to={`/project${image.page}`} key={index}>
             <div className="w-full">
-              <div className="relative aspect-[3/1] overflow-hidden rounded-lg group">
+              <div className="relative aspect-square md:aspect-[3/1] overflow-hidden rounded-lg group">
                 <img
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105 group-hover:blur-[2px] group-hover:brightness-50"
                 />
-                <div className="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                <div className="absolute inset-0 bg-black/30 opacity-100 md:opacity-0 transition-opacity duration-300 md:group-hover:opacity-100"></div>
 
-                <div className="absolute  ml-8 bottom-0 left-0 p-6 opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-                  <div className="h-full">
+                <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-6 transition-all duration-300">
+                  <div className="flex flex-col items-start gap-2 ml-4">
                     <motion.img
                       src={image.titleImg}
                       alt={image.alt}
                       initial={{ scale: 0.5 }}
                       whileInView={{ scale: 1 }}
                       transition={{ duration: 0.5 }}
-                      className="h-20 object-contain"
+                      className="h-12 md:h-20 object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     />
+                    <p className="text-white/90 text-sm md:text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
+                      [ {image.subtitle} ]
+                    </p>
                   </div>
-                  <p className="text-white/90 mt-2 text-lg">
-                    [ {image.subtitle} ]
-                  </p>
                 </div>
               </div>
             </div>

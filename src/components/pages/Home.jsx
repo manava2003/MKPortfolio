@@ -47,7 +47,10 @@ const Home = () => {
         backgroundImage: `
             linear-gradient(to right, rgba(233, 0, 116, 0.25) 1px, transparent 1px),
             linear-gradient(to bottom, rgba(233, 0, 116, 0.25) 1px, transparent 1px)`,
-        backgroundSize: "400px 400px",
+        backgroundSize: "200px 200px",
+        "@media (min-width: 768px)": {
+          backgroundSize: "400px 400px",
+        },
         backgroundPosition: "center center",
         position: "relative",
         width: "100%",
@@ -58,10 +61,10 @@ const Home = () => {
       }}
       className="min-h-screen w-full overflow-y-clip bg-center bg-100% overflow-x-hidden"
     >
-      <SplashScreen />
+      {/* <SplashScreen /> */}
       <CustomCursor></CustomCursor>
       {/* Header */}
-      <header className="flex justify-between items-center py-6 px-6">
+      <header className="flex justify-between items-center py-6 px-6 md:py-6 md:px-6">
         <img src={SmallLogo} alt="small logo" />
         <SlideArrowButton />
       </header>
@@ -73,7 +76,7 @@ const Home = () => {
           whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 2 }}
-          className="flex justify-center"
+          className="flex justify-center mx-10 mt-10 md:mx-0 md:mt-0"
         >
           <img src={BigLogo} alt="big logo" />
         </motion.div>
@@ -97,12 +100,13 @@ const Home = () => {
         whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
         viewport={{ once: true, margin: "-200px" }}
         transition={{ duration: 1.0 }}
-        className=" flex justify-center py-6 top-[700px] mx-auto"
+        className="flex justify-center py-6 top-[700px] mx-auto -translate-x-30 md:-translate-x-0"
       >
         <svg
-          width="47"
-          height="277"
+          width="100"
+          height="200"
           viewBox="0 0 47 277"
+          className="md:h-[277px]"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -264,7 +268,7 @@ const Home = () => {
         <div className=" mt-40">
           <BigFourImages />
         </div>
-        <div className=" mt-40">
+        <div className="mt-40">
           <SketchSlider />
         </div>
       </div>

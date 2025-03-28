@@ -5,7 +5,7 @@ import illustartionText from "../assets/MY ILLUSTRATIONS.png";
 import illustrationRectangele from "../assets/Rectangle 13.png";
 const Illustrations = () => {
   return (
-    <div className="relative md:translate-x-14  md:left-36 max-w-fit mt-[20rem]">
+    <div className="relative md:translate-x-14  md:left-36 max-w-fit mt-[10rem] md:mt-[20rem]">
       <div className="flex flex-row justify-start items-start gap-10">
         <img
           src={illustrationRectangele}

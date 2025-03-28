@@ -28,7 +28,8 @@ import BigLogo from "../../assets/Group 14.png";
 import SmallLogo from "../../assets/Group 15.png";
 import MileyCollection from "../../assets/MILEY COLLECTION.png";
 import customOrderBelowtext from "../../assets/cutomOrderBelowText.png";
-
+import illustrationAboveText from "../../assets/illustration-above-text.svg";
+import projectText from "../../assets/projects-text.svg";
 const Home = () => {
   const aboutRef = useRef(null);
   const servicesRef = useRef(null);
@@ -160,14 +161,21 @@ const Home = () => {
         ref={servicesRef}
         className=""
       >
-        <span className="mx-[699px] text-center text-[20px]">[Services]</span>
+        <span className="mx-[150px] md:mx-[699px] text-center text-[20px]">
+          [Services]
+        </span>
 
         <Services></Services>
 
         <img
-          className="translate-x-[200px] "
+          className="hidden md:block md:translate-x-[200px] "
           src={customOrderBelowtext}
           alt="service below text"
+        />
+        <img
+          src={illustrationAboveText}
+          alt="illustration-above-text"
+          className="block md:hidden ml-8"
         />
         <motion.div
           initial={{ opacity: 0, y: 100, rotateX: 30 }}
@@ -217,7 +225,7 @@ const Home = () => {
         whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
         viewport={{ once: true, margin: "-200px" }}
         transition={{ duration: 1.0 }}
-        className="relative bg-pink-500 min-h-[120vh] w-full rounded-t-[350px] overflow-hidden mt-70"
+        className="relative bg-pink-500 min-h-[120vh] w-full rounded-t-[150px] md:rounded-t-[350px] overflow-hidden mt-70"
       >
         {/* Background Video */}
         <div className="absolute inset-0">
@@ -237,13 +245,16 @@ const Home = () => {
         <div className="relative z-10 container mx-auto px-4 py-24">
           <div className="mt-32">
             {/* Title Section */}
-            <div className="flex items-center translate-x-10 gap-5 mb-12">
-              <div className="bg-white w-5 h-5"></div>
-
-              <img src={MileyCollection} alt="mileycollection" />
+            <div className="flex flex-col md:flex-row md:items-center translate-x-0 md:translate-x-10 gap-3 md:gap-5 mb-8 md:mb-12">
+              <div className="bg-white w-3 h-4 mr-2 md:mr-0 md:w-5 md:h-5"></div>
+              <img
+                src={MileyCollection}
+                alt="mileycollection"
+                className="w-[70%] md:w-auto mx-5 mt-[-40px] md:mt-[-0px] md:mx-0"
+              />
             </div>
-            <div className="flex items-center gap-5 m-44">
-              <p className="text-xs translate-x-[550px] md:text-4xl text-left tracking-none font-thin subpixel-antialiased leading-none text-white [word-spacing:10px]">
+            <div className="flex  items-center gap-5 m-44">
+              <p className="text-xs hidden md:block md:translate-x-[550px] md:text-4xl text-left tracking-none font-thin subpixel-antialiased leading-none text-white [word-spacing:10px]">
                 From her days as a Disney
                 <br /> superstar to the fearless rebel <br />
                 breaking societal norms, this
@@ -251,14 +262,21 @@ const Home = () => {
                 echoes of her evolution
               </p>
             </div>
+            <div className="flex flex-col  md:hidden items-center gap-5 -translate-y-20">
+              <p className="text-xl flex flex-col [word-spacing:20px] ">
+                From her days as a Disney superstar to the fearless rebel
+                breaking societal norms, this collection captures the nostalgic
+                echoes of her evolution
+              </p>
+            </div>
 
             {/* Carousel Section */}
-            <div className="mx-36 bg-pink-900 p-10 ">
+            <div className="mx-36 bg-pink-900 p-10 w-[400px] md:w-full  -translate-x-[145px] rounded-md md:rounded-none md:-translate-x-0">
               <PinkSectionCarousel />
             </div>
 
             {/* Images Section */}
-            <div className="w-screen -mx-[50vw] left-[50%] relative mt-72 translate-y-24">
+            <div className="w-screen -mx-[50vw] left-[50%] relative md:mt-72 translate-y-24">
               <BigThreeImagesBandW />
             </div>
           </div>
@@ -266,6 +284,14 @@ const Home = () => {
       </motion.div>
       <div>
         <div className=" mt-40">
+          <div className="flex flex-row gap-4">
+            <div className="w-6 h-5 ml-4 bg-white"></div>
+            <img
+              src={projectText}
+              className="-translate-y-5"
+              alt="projectText"
+            />
+          </div>
           <BigFourImages />
         </div>
         <div className="mt-40">

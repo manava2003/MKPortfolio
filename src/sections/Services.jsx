@@ -2,10 +2,13 @@ import React from "react";
 import s1 from "../assets/image.png";
 import s2 from "../assets/blueedyt 1.png";
 import s3 from "../assets/Mask group.png";
+import customDesign from "../assets/service-custom-order.svg";
+import illustration from "../assets/service-illustration-design.svg";
+import personalLabels from "../assets/service-personal-labels.png";
 
 export const Services = () => {
   return (
-    <div className="text-white mx-auto px-4 md:px-20 md:translate-x-24 mb-[45rem]">
+    <div className="text-white mx-auto px-4 md:px-20 md:translate-x-24 mb-[10rem] md:mb-[45rem]">
       <br></br>
       <br></br>
       <br></br>
@@ -24,7 +27,7 @@ export const Services = () => {
           </div>
           <div className="w-3/4 mx-auto mt-4 md:mt-0 md:-translate-x-12 md:-translate-y-36 md:w-auto md:mx-0 relative">
             <svg
-              className="w-full md:w-auto"
+              className="w-full hidden md:block md:w-auto"
               height="84"
               viewBox="0 0 304 84"
               fill="none"
@@ -79,6 +82,11 @@ export const Services = () => {
                 fill="white"
               />
             </svg>
+            <img
+              src={customDesign}
+              alt="customDesign"
+              className="ml-[-45px] block md:hidden"
+            />
           </div>
         </div>
         <div>
@@ -97,7 +105,7 @@ export const Services = () => {
               viewBox="0 0 366 84"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="w-full md:max-w-xs"
+              className="w-full md:max-w-xs hidden md:block"
             >
               <path
                 d="M350.974 83.4783H342.249C341.958 83.4783 341.764 83.2696 341.764 82.9565V0.521739C341.764 0.208693 341.958 0 342.249 0H349.907C350.198 0 350.489 0.208693 350.489 0.521739L354.852 40.6957H355.336V0.521739C355.336 0.208693 355.53 0 355.821 0H365.515C365.806 0 366 0.208693 366 0.521739V82.9565C366 83.2696 365.806 83.4783 365.515 83.4783H357.857C357.566 83.4783 357.275 83.2696 357.275 82.9565L351.943 38.6087H351.459V82.9565C351.459 83.2696 351.265 83.4783 350.974 83.4783Z"
@@ -172,6 +180,11 @@ export const Services = () => {
                 fill="white"
               />
             </svg>
+            <img
+              src={illustration}
+              alt="illustration"
+              className="ml-[-45px] block md:hidden"
+            />
           </div>
         </div>
         <div className="md:translate-y-1/4">
@@ -189,7 +202,7 @@ export const Services = () => {
               viewBox="0 0 332 84"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="w-full md:max-w-sm"
+              className="w-full md:max-w-sm hidden md:block"
             >
               <path
                 d="M321.253 32.655V9.45H319.103V30.975C319.103 32.13 319.103 33.285 321.253 35.175L326.626 40.425C331.463 45.15 332 45.255 332 53.76V67.2C332 78.75 332 84 323.402 84H316.954C308.356 84 308.356 78.75 308.356 67.2V50.295C308.356 49.98 308.571 49.77 308.893 49.77H318.566C318.888 49.77 319.103 49.98 319.103 50.295V74.55H321.253V51.975C321.253 50.82 321.36 49.35 319.103 47.775L314.804 44.1C309.108 39.165 308.356 37.17 308.356 28.665V16.8C308.356 5.24999 308.356 0 316.954 0H323.402C332 0 332 5.24999 332 16.8V32.655C332 32.97 331.785 33.18 331.463 33.18H321.79C321.468 33.18 321.253 32.97 321.253 32.655Z"
@@ -248,6 +261,11 @@ export const Services = () => {
                 fill="white"
               />
             </svg>
+            <img
+              src={personalLabels}
+              alt="personalLabels"
+              className="ml-[-29px] block md:hidden"
+            />
           </div>
         </div>
       </div>

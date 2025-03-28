@@ -62,7 +62,7 @@ const Home = () => {
       }}
       className="min-h-screen w-full overflow-y-clip bg-center bg-100% overflow-x-hidden"
     >
-      {/* <SplashScreen /> */}
+      <SplashScreen />
       <CustomCursor></CustomCursor>
       {/* Header */}
       <header className="flex justify-between items-center py-6 px-6 md:py-6 md:px-6">

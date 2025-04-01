@@ -24,8 +24,8 @@ import SketchSlider from "../../sections/SketchSlider";
 
 // Assets
 import backgroundVideo from "../../assets/video.mp4";
-import BigLogo from "../../assets/Group 14.png";
-import SmallLogo from "../../assets/Group 15.png";
+import BigLogo from "../../assets/final-Big-logo.svg";
+import SmallLogo from "../../assets/final-small-logo.svg";
 import MileyCollection from "../../assets/MILEY COLLECTION.png";
 import customOrderBelowtext from "../../assets/cutomOrderBelowText.png";
 import illustrationAboveText from "../../assets/illustration-above-text.svg";
@@ -77,7 +77,7 @@ const Home = () => {
           whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 2 }}
-          className="flex justify-center mx-10 mt-10 md:mx-0 md:mt-0"
+          className="mx-auto mt-[-20px] w-[250px] md:w-[500px]"
         >
           <img src={BigLogo} alt="big logo" />
         </motion.div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import BigLogo from "../assets/Group 14.png";
+import BigLogo from "../assets/final-Big-logo.svg";
 export default function SplashScreen() {
   const [showSplash, setShowSplash] = useState(true);
   useEffect(() => {
@@ -66,7 +66,7 @@ export default function SplashScreen() {
             <motion.img
               src={BigLogo}
               alt="Splash screen logo"
-              className="w-[700px] h-[700px] object-contain"
+              className="md:w-[700px] h-[700px] object-contain"
               variants={imageVariants}
             />
           </div>

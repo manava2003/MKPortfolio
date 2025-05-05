@@ -8,7 +8,7 @@ export const About = () => {
   return (
     <div className="text-white mx-auto md:mx-[70px] text-center self-center items-center px-4 md:px-40">
       <div className="p-4 md:p-9">
-        <span className=" text-[20px]">[About]</span>
+        <span className=" text-[20px] ml-56">[About]</span>
         <br></br>
         <br></br>
         <div className="text-center relative md:left-[-70px]"></div>
@@ -17,7 +17,7 @@ export const About = () => {
         <br></br>
         <br></br>
         <br></br>
-        <div className="flex flex-col md:flex-row w-[400px] ml-10 md:ml-0 h-[800px] bg-[#171717] md:h-[618px] md:w-[1151px]  relative left-[-70px] -translate-x-1 md:translate-x-0 ">
+        <div className="flex flex-col md:flex-row w-[400px] ml-10  md:ml-0 h-[800px] bg-[#171717] md:h-[618px] md:w-[1151px]  relative left-[-200px] -translate-x-1 md:translate-x-0 ">
           <img
             alt="mk"
             src={mk}
@@ -37,7 +37,7 @@ export const About = () => {
             />
 
             <img
-              className="pt-10 hidden md:block h-[300px] w-[400px] md:mb-10 md:h-[500px] md:w-[700px] "
+              className="pt-10 hidden md:block ml-12 scale-110 md:mb-10  "
               src={ParaPhoto}
               alt="paraphoto"
             />
@@ -47,3 +47,4 @@ export const About = () => {
     </div>
   );
 };
+// aakhri commit

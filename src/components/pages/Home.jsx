@@ -103,8 +103,9 @@ const Home = () => {
         whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
         viewport={{ once: true, margin: "-200px" }}
         transition={{ duration: 1.0 }}
-        className="flex justify-center py-6 top-[700px] mx-auto -translate-x-30 md:-translate-x-0"
+        className="flex justify-center py-6 top-[700px] mx-auto mr-72 -translate-x-30 md:-translate-x-0"
       >
+        <div className="relative ml-56">
         <svg
           width="100"
           height="200"
@@ -120,13 +121,14 @@ const Home = () => {
             strokeLinecap="round"
           />
         </svg>
+        </div>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 100, rotateX: 30 }}
         whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
         viewport={{ once: true, margin: "-200px" }}
         transition={{ duration: 1.0 }}
-        className=" text-center font-[Poppins] "
+        className="text-center font-[Poppins] mx-auto mr-72 max-w-full px-4"
         ref={aboutRef}
       >
         <About></About>
@@ -161,9 +163,9 @@ const Home = () => {
         viewport={{ once: true, margin: "-200px" }}
         transition={{ duration: 1.0 }}
         ref={servicesRef}
-        className=""
+        className="  mx-auto   mr-72"
       >
-        <span className="mx-[150px] md:mx-[699px] text-center text-[20px]">
+        <span className="ml-[575px] relative  text-center text-[20px]">
           [Services]
         </span>
 
@@ -177,14 +179,14 @@ const Home = () => {
         <img
           src={illustrationAboveText}
           alt="illustration-above-text"
-          className="block md:hidden ml-8"
+          className="block md:hidden ml-8 mx-auto"
         />
         <motion.div
           initial={{ opacity: 0, y: 100, rotateX: 30 }}
           whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           viewport={{ once: true, margin: "-200px" }}
           transition={{ duration: 1.0 }}
-          className=""
+          className=" mx-auto "
         >
           <Illustrations></Illustrations>
         </motion.div>
@@ -256,7 +258,7 @@ const Home = () => {
               />
             </div>
             <div className="flex  items-center gap-5 m-44">
-              <p className="text-xs hidden md:block md:translate-x-[550px] md:text-4xl text-left tracking-none font-thin subpixel-antialiased leading-none text-white [word-spacing:10px]">
+              <p className="text-xs hidden md:block md:translate-x-[300px] md:text-4xl text-left tracking-none font-thin subpixel-antialiased leading-none text-white [word-spacing:10px]">
                 From her days as a Disney
                 <br /> superstar to the fearless rebel <br />
                 breaking societal norms, this
@@ -264,8 +266,8 @@ const Home = () => {
                 echoes of her evolution
               </p>
             </div>
-            <div className="flex flex-col  md:hidden items-center gap-5 -translate-y-20">
-              <p className="text-xl flex flex-col [word-spacing:20px] ">
+            <div className="flex flex-col  md:hidden items-center gap-5 -translate-y-20 mr-20 relative">
+              <p className="text-xl flex flex-col [word-spacing:20px]  ">
                 From her days as a Disney superstar to the fearless rebel
                 breaking societal norms, this collection captures the nostalgic
                 echoes of her evolution
@@ -278,7 +280,7 @@ const Home = () => {
             </div>
 
             {/* Images Section */}
-            <div className="w-screen -mx-[50vw] left-[50%] relative md:mt-72 translate-y-24">
+            <div className="w-screen scale-110 -mx-[50vw] left-[50%] relative md:mt-72 translate-y-24" >
               <BigThreeImagesBandW />
             </div>
           </div>
@@ -297,12 +299,18 @@ const Home = () => {
           </div>
           <BigFourImages />
         </div>
-        <div className="mt-40">
+        <div className="mt-40" ref={contactRef}>
           <SketchSlider />
         </div>
       </div>
-      <div ref={contactRef}>
-        <Footer />
+      <div >
+        <Footer 
+        scrollToSection={scrollToSection}
+        contactRef={contactRef}
+        aboutRef={aboutRef}
+        workRef={workRef}
+        servicesRef={servicesRef}
+          />
       </div>
     </div>
   );

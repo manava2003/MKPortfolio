@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "caniuse-lite": "^1.0.30001715",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^11.18.2",
     "lucide-react": "^0.474.0",
     "motion": "^11.16.0",

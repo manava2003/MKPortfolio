@@ -8,7 +8,7 @@ import personalLabels from "../assets/service-personal-labels.png";
 
 export const Services = () => {
   return (
-    <div className="text-white mx-auto px-4 md:px-20 md:translate-x-24 mb-[10rem] md:mb-[45rem]">
+    <div className="text-white left-[-120px] relative px-4 md:px-20 md:translate-x-24 mb-[10rem] md:mb-[45rem]">
       <br></br>
       <br></br>
       <br></br>

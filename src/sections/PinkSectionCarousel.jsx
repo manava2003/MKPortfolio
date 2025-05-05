@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import pinkStatue from "../assets/pink-statue.png";
-import girlWithNewspaper from "../assets/girlWithNewspaper.png";
+import girlWithNewspaper from "../assets/secondCarouselImage.jpg";
 import { motion } from "framer-motion";
 
 const PinkSectionCarousel = () => {
@@ -14,8 +14,8 @@ const PinkSectionCarousel = () => {
     },
     {
       image: girlWithNewspaper,
-      para1: `It is an avant-garde leather garment collection inspired by Miley Cyrus, celebrating her fearless approach to fashion and individuality. It pays homage to rock 'n' roll culture, and embraces an eclectic fusion of styles. It's a unique and immersive fashion experience that invites individuals to break free from the ordinary and celebrate their inner wilderness. `,
-      para2: `It represents not only the sunny side of self-expression, but also the darker, more introspective aspects of human existence. Each garment is a reflection of of her life's highs and lows, translating her personal triumphs and traumas into intricate designs that tell a profound story.`,
+      para1: `This collection is divided into five phases of Miley's life, each representing a key turning point in her personal and artistic journey. Reckless Rhapsody maps her transformation through moments that shaped her identity. Hannah Montana Era – Miley's early rise to fame as a Disney star balancing two identities. Breakout of Character – Letting go of her Disney image to explore who she truly is. `,
+      para2: `Paws of Remembrance – A period when she dealt with the loss of her pets and processed grief. The Heartbreak – A time of emotional pain after a breakup, leading her to reflect and grow. Musical Liberation – Using music as a way to express herself and explore new creative directions. Click on the image link to explore the full story behind each phase and dive deeper into the making of this collection.`,
     },
   ];
 
@@ -23,7 +23,7 @@ const PinkSectionCarousel = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 3000);
+    }, 10000);
 
     return () => clearInterval(timer);
   }, []);
@@ -53,11 +53,15 @@ const PinkSectionCarousel = () => {
                 className="min-w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10 items-center p-2 md:p-5"
               >
                 <figure className="w-full h-[200px] sm:h-[250px] md:h-[489px] mx-auto">
+                  <a href="https://www.behance.net/gallery/201336963/FASHION-COLLECTION">
                   <img
+                    
                     src={slide.image}
                     alt={`Slide ${index + 1}`}
                     className="h-[500px] w-[800px] rounded-lg md:rounded-none -translate-y-36  md:-translate-y-0 md:w-full md:h-full object-contain md:-translate-x-20"
                   />
+                  </a>
+                 
                 </figure>
                 <div
                   className="text-white w-full px-3 md:px-0 md:-translate-x-36 md:w-[600px]"
@@ -68,7 +72,7 @@ const PinkSectionCarousel = () => {
                     textAlign: "justify",
                   }}
                 >
-                  <div className="flex flex-col gap-3  md:mt-[-0px] md:gap-2 md:-translate-y-20">
+                  <div className="flex flex-col gap-3 ml-5  md:mt-[-0px] md:gap-2 md:-translate-y-20">
                     <span className=" text-sm md:text-base md:leading-[24px]">
                       {slide.para1}
                     </span>

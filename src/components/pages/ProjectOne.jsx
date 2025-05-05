@@ -2,7 +2,7 @@ import React from "react";
 
 import Navbar from "../Navbar";
 import Footer from "../Footer";
-import SmallLogo from "../../assets/Group 15.png";
+import SmallLogo from "../../assets/final-small-logo.svg";
 
 import ManiacBikerLeftImage from "../../assets/ManiacBiker/ManiacBikerLeftImage.png";
 import ManiacBikerRightImage from "../../assets/ManiacBiker/ManiacBikerRightImage.png";

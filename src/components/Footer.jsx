@@ -1,6 +1,6 @@
 import FooterImageLogo from "../assets/final-small-logo.svg";
 import UnderLine from "../assets/Line 9.png";
-export default function Component() {
+export default function Component({scrollToSection,aboutRef,contactRef,workRef,servicesRef}) {
   return (
     <footer className=" md:-translate-y-0 bg-[#E90074] pt-32 w-full h-[550px] flex flex-col">
       <div className="container mx-auto px-20 pb-40 flex justify-between items-start">
@@ -24,7 +24,7 @@ export default function Component() {
             <ul className="space-y-4 text-lg">
               <li>
                 <a
-                 
+                 onClick={() => scrollToSection(aboutRef)}
                   className="hover:opacity-80 transition-opacity"
                 >
                   About
@@ -32,20 +32,20 @@ export default function Component() {
               </li>
               <li>
                 <a
-                  
+                  onClick={() => scrollToSection(servicesRef)}
                   className="hover:opacity-80 transition-opacity"
                 >
                   Services
                 </a>
               </li>
               <li>
-                <a  className="hover:opacity-80 transition-opacity">
+                <a  className="hover:opacity-80 transition-opacity" onClick={() => scrollToSection(workRef)}>
                   Work
                 </a>
               </li>
               <li>
                 <a
-                  
+                  onClick={() => scrollToSection(contactRef)}
                   className="hover:opacity-80 transition-opacity"
                 >
                   Contact

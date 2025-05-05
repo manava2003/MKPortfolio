@@ -2,7 +2,7 @@ import React from "react";
 
 import Navbar from "../Navbar";
 import Footer from "../Footer";
-import SmallLogo from "../../assets/Group 15.png";
+import SmallLogo from "../../assets/final-small-logo.svg";
 
 import MetaVerseSmall from "../../assets/Metaverse/MetaverseLeftImage.png";
 import MetaVerseBig from "../../assets/Metaverse/MetaverseRightImage.png";

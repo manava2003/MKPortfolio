@@ -69,8 +69,7 @@ export default function SplashScreen() {
               alt="Splash screen logo"
               className="md:w-[700px] h-[700px] object-contain"
               variants={imageVariants}
-            /><p className="bottom-32 relative text-center font-[Poppins] text-white">I like being the girl nobody can have</p>
-
+            />
             
           </div>
         </motion.div>

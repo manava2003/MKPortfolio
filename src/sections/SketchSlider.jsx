@@ -56,27 +56,18 @@ const CarouselBackground = () => {
   );
 };
 
-const ButtonMailto = ({
-  mailto,
-  label,
-  submitted,
-  setSubmitted,
-  onEmailSent,
-}) => {
+const ButtonMailto = ({ mailto, label, submitted, setSubmitted, onEmailSent }) => {
   return (
-    <Link
-      to="#"
+    <a
+      href={`mailto:${mailto}`}
       onClick={(e) => {
-        e.preventDefault();
-        const mailtoLink = `mailto:${mailto}`;
-        window.location.href = mailtoLink;
         setSubmitted(true);
         onEmailSent();
         setTimeout(() => {
           setSubmitted(false);
         }, 2000);
       }}
-      className="absolute right-0 top-0 h-full aspect-square bg-[#E90074] hover:bg-pink-500  text-white flex items-center justify-center"
+      className="absolute right-0 top-0 h-full aspect-square bg-[#E90074] hover:bg-pink-500 text-white flex items-center justify-center"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +83,7 @@ const ButtonMailto = ({
           d="M14 5l7 7m0 0l-7 7m7-7H3"
         />
       </svg>
-    </Link>
+    </a>
   );
 };
 
@@ -219,6 +210,7 @@ const ContactForm = () => {
                 onEmailSent={resetForm}
                 label="Send Email"
                 mailto={mailtoString}
+                
               />
             )}
           </div>

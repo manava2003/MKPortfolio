@@ -9,7 +9,7 @@ const BigThreeImagesBandW = () => {
       whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8 }}
-      className="w-full grid grid-cols-1 gap-4"
+      className="w-full grid grid-cols-1 gap-4 mx-auto mr-72"
     >
       <div className="relative h-[180px] md:h-[600px] overflow-hidden min-w-[200px] mx-auto">
         <img

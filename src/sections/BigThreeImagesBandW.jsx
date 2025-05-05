@@ -11,7 +11,7 @@ const BigThreeImagesBandW = () => {
       transition={{ duration: 0.8 }}
       className="w-full grid grid-cols-1 gap-4"
     >
-      <div className="relative h-[180px] md:h-[600px] overflow-hidden min-w-[200px]">
+      <div className="relative h-[180px] md:h-[600px] overflow-hidden min-w-[200px] mx-auto">
         <img
           src={BigThreeImage}
           alt="Big Three"

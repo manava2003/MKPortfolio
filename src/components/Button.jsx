@@ -5,11 +5,15 @@ export default function SlideArrowButton({
   text = "Let's talk",
   primaryColor = "#E91E63",
   className = "",
+  contactRef,
+  scrollToSection, // Destructure contactRef from props
   ...props
 }) {
   return (
     <button
-      className={`group relative  border border-white px-3 py-2 md:px-8 md:py-4  text-xl font-extrathin transition-all duration-300 ease-in-out hover:border-transparent ${className}`}
+       // Use the contactRef here
+      onClick={() => scrollToSection(contactRef)}
+      className={`group relative border border-white px-3 py-2 md:px-8 md:py-4 text-xl font-extrathin transition-all duration-300 ease-in-out hover:border-transparent ${className}`}
       {...props}
     >
       <div

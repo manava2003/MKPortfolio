@@ -62,13 +62,16 @@ export default function SplashScreen() {
         >
           <div className="absolute left-0 top-0 bottom-0 w-1/4 bg-pink-100 blur-3xl opacity-50" />
           <div className="absolute right-0 top-0 bottom-0 w-1/4 bg-pink-100 blur-3xl opacity-50" />
+          
           <div className="text-gray-800 text-center px-4 relative z-10">
             <motion.img
               src={BigLogo}
               alt="Splash screen logo"
               className="md:w-[700px] h-[700px] object-contain"
               variants={imageVariants}
-            />
+            /><p className="bottom-32 relative text-center font-[Poppins] text-white">I like being the girl nobody can have</p>
+
+            
           </div>
         </motion.div>
       )}

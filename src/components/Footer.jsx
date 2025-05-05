@@ -1,4 +1,4 @@
-import FooterImageLogo from "../assets/Group 16.png";
+import FooterImageLogo from "../assets/final-small-logo.svg";
 import UnderLine from "../assets/Line 9.png";
 export default function Component() {
   return (
@@ -24,7 +24,7 @@ export default function Component() {
             <ul className="space-y-4 text-lg">
               <li>
                 <a
-                  href="/about"
+                 
                   className="hover:opacity-80 transition-opacity"
                 >
                   About
@@ -32,20 +32,20 @@ export default function Component() {
               </li>
               <li>
                 <a
-                  href="/services"
+                  
                   className="hover:opacity-80 transition-opacity"
                 >
                   Services
                 </a>
               </li>
               <li>
-                <a href="/work" className="hover:opacity-80 transition-opacity">
+                <a  className="hover:opacity-80 transition-opacity">
                   Work
                 </a>
               </li>
               <li>
                 <a
-                  href="/contact"
+                  
                   className="hover:opacity-80 transition-opacity"
                 >
                   Contact
@@ -60,7 +60,7 @@ export default function Component() {
             <ul className="space-y-4 text-lg">
               <li>
                 <a
-                  href="https://instagram.com/mkaepae"
+                  href="https://instagram.com/studio.mkbae"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:opacity-80 transition-opacity"
@@ -70,7 +70,7 @@ export default function Component() {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com/in/mkaepae"
+                  href="https://www.linkedin.com/in/mahinder-kaur-b05a351b8/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:opacity-80 transition-opacity"

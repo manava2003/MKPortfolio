@@ -32,8 +32,8 @@ export const Images = () => {
       whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, delay: 3 }}
-      className={`flex justify-center ${
-        isMobile ? "" : "group"
+      className={`flex justify-center mx-auto ${
+        isMobile ? "" : "group "
       } relative h-[300px] md:h-[700px] items-center`}
     >
       {/* Left Image */}

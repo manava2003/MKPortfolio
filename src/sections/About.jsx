@@ -6,7 +6,7 @@ import mobileText from "../assets/about-text-mobile.svg";
 
 export const About = () => {
   return (
-    <div className="text-white  mx-[20px] md:mx-[70px] text-center self-center items-center px-4 md:px-40">
+    <div className="text-white mx-auto md:mx-[70px] text-center self-center items-center px-4 md:px-40">
       <div className="p-4 md:p-9">
         <span className=" text-[20px]">[About]</span>
         <br></br>

@@ -60,14 +60,16 @@ const Home = () => {
         color: "white",
         overflowX: "hidden",
       }}
-      className="min-h-screen w-full overflow-y-clip bg-center bg-100% overflow-x-hidden"
+      className="min-h-screen w-full overflow-y-clip bg-center bg-100% overflow-x-hidden mx-auto"
     >
       <SplashScreen />
       <CustomCursor></CustomCursor>
       {/* Header */}
       <header className="flex justify-between items-center py-6 px-6 md:py-6 md:px-6">
         <img src={SmallLogo} alt="small logo" />
-        <SlideArrowButton />
+        <div  onClick={() => scrollToSection(contactRef)}>
+        <SlideArrowButton  />
+        </div>
       </header>
       {/* Main Section */}
       <main className="">
@@ -271,7 +273,7 @@ const Home = () => {
             </div>
 
             {/* Carousel Section */}
-            <div className="mx-36 bg-pink-900 p-10 w-[400px] md:w-full  -translate-x-[145px] rounded-md md:rounded-none md:-translate-x-0">
+            <div className=" mx-auto bg-pink-900 p-10 w-[400px] md:w-full  -translate-x-[145px] rounded-md md:rounded-none md:-translate-x-0">
               <PinkSectionCarousel />
             </div>
 
@@ -290,6 +292,7 @@ const Home = () => {
               src={projectText}
               className="-translate-y-5"
               alt="projectText"
+              ref={workRef}
             />
           </div>
           <BigFourImages />
@@ -298,7 +301,7 @@ const Home = () => {
           <SketchSlider />
         </div>
       </div>
-      <div>
+      <div ref={contactRef}>
         <Footer />
       </div>
     </div>

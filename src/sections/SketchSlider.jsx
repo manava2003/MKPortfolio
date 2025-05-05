@@ -126,7 +126,7 @@ const ContactForm = () => {
     }
   };
 
-  const recipientEmail = "mkbae@gmail.com";
+  const recipientEmail = "hellomkaebae@gmail.com";
 
   // Construct the mailto string with proper encoding
   const mailtoString = `${recipientEmail}?subject=${encodeURIComponent(

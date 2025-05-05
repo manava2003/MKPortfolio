@@ -42,7 +42,7 @@ export const About = () => {
               alt="paraphoto"
             />
           </div>
-        </div>
+        </div> 
       </div>
     </div>
   );
